@@ -30,9 +30,12 @@ $(document).ready(function() {
 		language: "English"
 	};
 
-	function formatNumber(language){
+	function formatNumber(number, language){
 		//Takes a number and returns it formatted based on the language
-		return language;
+		return $.parseNumber(String(number),{
+			format:"#,###.00", locale:language
+		})
+
 	}
 
 	$('#animateIn').bind('click', function(){
@@ -55,9 +58,13 @@ $(document).ready(function() {
 		$(from).animate(to, {
 			duration:1000,
 			step: function(){
-				$('#otaProfitAmount').html(this.properity);
+				//$('#otaProfitAmount').html(formatNumber(this.properity, "us"));
 			}
 		});
+
+		var number = $.parseNumber("1.300,566", {format:"", locale:"de"});
+   		log(String(number));
+
 	}
 
 	function remove(){
