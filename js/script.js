@@ -1,14 +1,18 @@
-
 // usage: log('inside coolFunc', this, arguments);
 // paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/
-window.log = function(){
-  log.history = log.history || [];   // store logs to an array for reference
-  log.history.push(arguments);
-  arguments.callee = arguments.callee.caller;
-  if(this.console) console.log( Array.prototype.slice.call(arguments) );
+window.log = function() {
+	log.history = log.history || [];   // store logs to an array for reference
+	log.history.push(arguments);
+	arguments.callee = arguments.callee.caller;
+	if (this.console) console.log(Array.prototype.slice.call(arguments));
 };
 // make it safe to use console.log always
-(function(b){function c(){}for(var d="assert,count,debug,dir,dirxml,error,exception,group,groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,time,timeEnd,trace,warn".split(","),a;a=d.pop();)b[a]=b[a]||c})(window.console=window.console||{});
+(function(b) {
+	function c() {
+	}
+
+	for (var d = "assert,count,debug,dir,dirxml,error,exception,group,groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,time,timeEnd,trace,warn".split(","),a; a = d.pop();)b[a] = b[a] || c
+})(window.console = window.console || {});
 
 
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
@@ -18,7 +22,7 @@ window.log = function(){
 
 $(document).ready(function() {
 
-	function validateData(vo){
+	function validateData(vo) {
 		//Check to see if all data is supplied and visualization has everything it needs.  Else, chuck an alert back at the sucker.
 		return 1;
 	}
@@ -30,24 +34,44 @@ $(document).ready(function() {
 		language: "English"
 	};
 
-	function formatNumber(number, language){
+	function formatNumber(number, language) {
 		//Takes a number and returns it formatted based on the language
-		return $.parseNumber(String(number),{
-			format:"#,###.00", locale:language
-		})
+
+		var formats = {
+			English : {
+				prefix: "",
+				centsSeparator:"",
+				thousandsSeparator:",",
+				centsLimit:0
+			},
+
+			German : {
+				prefix: "",
+				centsSeparator:",",
+				thousandsSeparator:""
+			}
+		}
+
+		//TO DO - Make this number formatted correctly.  Strip it down and then build it up
+		return number;
+
 
 	}
 
-	$('#animateIn').bind('click', function(){
+	$('#animateIn').bind('click', function() {
 		init(defaults);
 	});
 
-	$('#animateOut').bind('click', function(){
+	$('#animateOut').bind('click', function() {
 		remove();
 	});
 
-	function init(vo){
+	function init(vo) {
 		log("Animating in");
+
+		//$('#sum').val(vo.OTAProfitAmount);
+		//$('#sum').priceFormat(lookupFormat(vo.language));
+
 		$('#blueContent').stop().animate({
 			bottom:'0'
 		}, 1000);
@@ -57,17 +81,16 @@ $(document).ready(function() {
 
 		$(from).animate(to, {
 			duration:1000,
-			step: function(){
-				//$('#otaProfitAmount').html(formatNumber(this.properity, "us"));
+			step: function() {
+				//$('#otaProfitAmount').html(this.properity)
+				$('#otaProfitAmount').html(formatNumber(this.properity, "English"));
 			}
 		});
-
-		var number = $.parseNumber("1.300,566", {format:"", locale:"de"});
-   		log(String(number));
-
+		//http://software.dzhuvinov.com/jsworld-currency-formatting.html
+		log($.format.number(1231231212.3241020, '#.##0,0#'))
 	}
 
-	function remove(){
+	function remove() {
 		log("Animating out");
 		$('#blueContent').stop().animate({
 			bottom:'-300px'
