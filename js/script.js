@@ -48,6 +48,16 @@ $(document).ready(function() {
 		$('#blueContent').stop().animate({
 			bottom:'0'
 		}, 1000);
+
+		var from = {properity:0};
+		var to = {properity:vo.OTAProfitAmount};
+
+		$(from).animate(to, {
+			duration:1000,
+			step: function(){
+				$('#otaProfitAmount').html(this.properity);
+			}
+		});
 	}
 
 	function remove(){
