@@ -22,6 +22,18 @@ window.log = function() {
 
 $(document).ready(function() {
 
+	var formats = {
+			English : {
+				format: "$#,###",
+				locale: "us"
+			},
+			German : {
+				format: "&euro;#,###",
+				locale: "de"
+			}
+		};
+
+
 	function validateData(vo) {
 		//Check to see if all data is supplied and visualization has everything it needs.  Else, chuck an alert back at the sucker.
 		return 1;
@@ -29,33 +41,13 @@ $(document).ready(function() {
 
 	var defaults = {
 		otaProfitLabelText: "OTA Profit",
-		currencySymbol: "$",
 		OTAProfitAmount: 48187,
-		language: "English"
+		language: "German"
 	};
 
-	function formatNumber(number, language) {
-		//Takes a number and returns it formatted based on the language
-
-		var formats = {
-			English : {
-				prefix: "",
-				centsSeparator:"",
-				thousandsSeparator:",",
-				centsLimit:0
-			},
-
-			German : {
-				prefix: "",
-				centsSeparator:",",
-				thousandsSeparator:""
-			}
-		}
-
-		//TO DO - Make this number formatted correctly.  Strip it down and then build it up
-		return number;
-
-
+	function formatAmericanNumberToLanguage(sourceAmericanNumber, language) {
+		var isoNum = $.parseNumber(String(sourceAmericanNumber),formats.English);
+		return $.formatNumber(isoNum, formats[language]);
 	}
 
 	$('#animateIn').bind('click', function() {
@@ -82,12 +74,12 @@ $(document).ready(function() {
 		$(from).animate(to, {
 			duration:1000,
 			step: function() {
-				//$('#otaProfitAmount').html(this.properity)
-				$('#otaProfitAmount').html(formatNumber(this.properity, "English"));
+				$('#otaProfitAmount').html(formatAmericanNumberToLanguage(this.properity, vo.language));
+			},
+			complete:function(){
+				$('#otaProfitAmount').html(formatAmericanNumberToLanguage(to.properity, vo.language));
 			}
 		});
-		//http://software.dzhuvinov.com/jsworld-currency-formatting.html
-		log($.format.number(1231231212.3241020, '#.##0,0#'))
 	}
 
 	function remove() {
