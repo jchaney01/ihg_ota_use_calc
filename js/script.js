@@ -67,6 +67,17 @@ $(document).ready(function() {
 		$('#blueContent').stop().animate({
 			bottom:'0'
 		}, 1000);
+		$('#d_roomsBase').stop().delay(300).animate({
+			bottom:'0'
+		}, 800);
+
+		$('#e_packageBase').stop().delay(800).animate({
+			bottom:'-100px'
+		}, 600);
+
+		$('#f_opaque').stop().delay(1200).animate({
+			bottom:'-130px'
+		}, 500);
 
 		var from = {properity:0};
 		var to = {properity:vo.OTAProfitAmount};
@@ -86,6 +97,16 @@ $(document).ready(function() {
 		log("Animating out");
 		$('#blueContent').stop().animate({
 			bottom:'-300px'
+
+		}, 1500);
+		$('#d_roomsBase').stop().animate({
+			bottom:'-300px'
+		}, 1500);
+		$('#e_packageBase').stop().animate({
+			bottom:'-300px'
 		}, 1000);
+		$('#f_opaque').stop().animate({
+			bottom:'-300px'
+		}, 500);
 	}
 });

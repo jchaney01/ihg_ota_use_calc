@@ -301,6 +301,10 @@ td { vertical-align: top; }
 @maskerWidth: 500px;
 @blueBlgLeftOffset: 100px;
 @otaprofitLabelBackground:@blueBuildingWidth+20px;
+@rotatedtextAmount:-15deg;
+@rotatedWidth:50px;
+@rotatedFontSize:11px;
+@rotatedTopOffest:10px;
 
 #buildingMasker{
 	height:@maskerHeight;
@@ -338,4 +342,59 @@ td { vertical-align: top; }
 	position:absolute;
 	height:	@maskerHeight;
 	bottom:0px; //Animate this to bring blue initially on
+}
+
+#d_roomsBase{
+	width:@blueBuildingWidth;
+	height:	@maskerHeight;
+	background-color:red;
+	z-index:2;
+	position:absolute;
+	bottom:-50px;
+	left:@blueBlgLeftOffset;
+	opacity:1;
+}
+
+#e_packageBase{
+	width:@blueBuildingWidth;
+	height:	@maskerHeight;
+	background-color:green;
+	z-index:3;
+	position:absolute;
+	bottom:-70px;
+	left:@blueBlgLeftOffset;
+	opacity:1;
+}
+
+#f_opaque{
+	width:@blueBuildingWidth;
+	height:	@maskerHeight;
+	background-color:orange;
+	z-index:4;
+	position:absolute;
+	bottom:-100px;
+	left:@blueBlgLeftOffset;
+	opacity:1;
+}
+
+#roomsOnlyCopy{
+	-webkit-transform: rotate(@rotatedtextAmount);
+	position:absolute;
+	top:@rotatedTopOffest;
+	right:0;
+	width:@rotatedWidth;
+	color:white;
+	font-size:@rotatedFontSize;
+	text-align:center;
+}
+
+#packageCopy{
+	-webkit-transform: rotate(@rotatedtextAmount);
+	position:absolute;
+	top:@rotatedTopOffest;
+	right:0;
+	width:@rotatedWidth;
+	color:white;
+	font-size:@rotatedFontSize;
+	text-align:center;
 }
