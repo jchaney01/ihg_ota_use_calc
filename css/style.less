@@ -297,7 +297,7 @@ td { vertical-align: top; }
 //Begin app styles
 
 @maskerHeight: 300px;
-@blueBuildingWidth:103px;
+@blueBuildingWidth:100px;
 @orangeBuildingWidth:@blueBuildingWidth;
 @maskerWidth: 450px;
 @blueBlgLeftOffset: 100px;
@@ -372,7 +372,7 @@ td { vertical-align: top; }
 #orangeContent{
 	position:absolute;
 	height:	@maskerHeight;
-	bottom:-100px; //Animate this to bring blue initially on
+	bottom:-150px; //Animate this to bring blue initially on
 		
 }
 
@@ -479,3 +479,12 @@ td { vertical-align: top; }
 #roomsNeededResult{
 	font-size:40px;
 }
+
+#miniBuildings{
+	height:@maskerHeight;
+	width:@orangeBuildingWidth;
+	background-color:#006400;
+	position:absolute;
+	top:71px;
+	left:@orangeBlgLeftOffset+@orangeBuildingWidth;
+}}
