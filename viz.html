@@ -38,69 +38,81 @@
 
 <body>
 <bdo dir="ltr">
-<div id="container">
-	<header>
-	</header>
-	<div id="main" role="main">
-		<div id="visualization">
-			<div id="buildingMasker">
-				<div id="orangeontent">
-					<div id="rightBuildingBase"></div>
-					<div id="yourProfitAmountCont">
-						<div id="yourProfitLabel">Your Profit</div>
-						<span class="curSymbol" id="yourProfitCurSymbol"></span><span id="yourProfitAmount">34,610</span>
+	<div id="container">
+		<header>
+		</header>
+		<div id="main" role="main">
+			<div id="visualization">
+				<div id="buildingMasker">
+					<div id="orangeContent">
+						<div id="rightBuildingBase"></div>
+						<div id="yourProfitAmountCont">
+							<div id="yourProfitLabel">
+								<div id="yourProfitLabelText">Your Profit</div>
+							</div>
+							<div id="yourProfitAmountDollarCont">
+								<span class="curSymbol" id="yourProfitCurSymbol"></span><span id="yourProfitAmount">34,610</span>
+							</div>
+						</div>
 					</div>
-					<div id="minis"></div>
-					<div id="roomsNeededCopy">Blah<div id="roomsNeededResult">388</div></div>
-				</div>
-				<div id="blueContent">
-					<div id="curencyParticles"></div>
-					<div id="f_opaque"></div>
-					<div id="e_packageBase"><div id="packageCopy">Package</div></div>
-					<div id="d_roomsBase"><div id="roomsOnlyCopy">Rooms Only</div></div>
-					<div id="leftBuildingBase"></div>
-					<div id="otaProfitAmountCont">
-						<div id="otaProfitLabel">OTA Profit</div>
-						<span class="curSymbol" id="otaProfitCurSymbol"></span><span id="otaProfitAmount">48,187</span>
+					<div id="roomsNeededCont"><div id="roomsNeededCopy">Rooms needed on direct channels to replace profits
+							<div id="roomsNeededResult">388</div>
+						</div></div>
+					<div id="blueContent">
+						<div id="curencyParticles"></div>
+						<div id="f_opaque">
+							<div id="opaqueCopy">Opaque</div>
+						</div>
+						<div id="e_packageBase">
+							<div id="packageCopy">Package</div>
+						</div>
+						<div id="d_roomsBase">
+							<div id="roomsOnlyCopy">Rooms Only</div>
+						</div>
+						<div id="leftBuildingBase"></div>
+						<div id="otaProfitAmountCont">
+							<div id="otaProfitLabel">OTA Profit</div>
+							<div id="otaProfitAmount"><span class="curSymbol" id="otaProfitCurSymbol"></span><span
+									id="otaProfitAmountISO">48,187</span></div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div id="devControls">
-			<a id="animateIn" href="#">Simulate method call with dummy data</a> <a id="animateOut" href="#">Reset</a>
-		</div>
+			<div id="devControls">
+				<a id="animateIn" href="#">Simulate method call with dummy data</a> <a id="animateOut"
+																					   href="#">Reset</a>
+			</div>
 
+		</div>
+		<footer>
+		</footer>
 	</div>
-	<footer>
-	</footer>
-</div>
-<!--! end of #container -->
+	<!--! end of #container -->
 
 
-<!-- JavaScript at the bottom for fast page loading -->
+	<!-- JavaScript at the bottom for fast page loading -->
 
-<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
-<script src="js/libs/jshashtable-2.1.js"></script>
-<script src="js/libs/jquery.numberformatter-1.2.2.js"></script>
-
-
-
-<!-- scripts concatenated and minified via ant build script-->
-<script defer src="js/plugins.js"></script>
-<script defer src="js/script.js"></script>
-<!-- end scripts-->
+	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+	<script src="js/libs/jshashtable-2.1.js"></script>
+	<script src="js/libs/jquery.numberformatter-1.2.2.js"></script>
 
 
-<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-	   chromium.org/developers/how-tos/chrome-frame-getting-started -->
-<!--[if lt IE 7 ]>
-<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-<script>window.attachEvent('onload', function() {
-	CFInstall.check({mode:'overlay'})
-})</script>
-<![endif]-->
+	<!-- scripts concatenated and minified via ant build script-->
+	<script defer src="js/plugins.js"></script>
+	<script defer src="js/script.js"></script>
+	<!-- end scripts-->
+
+
+	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+		   chromium.org/developers/how-tos/chrome-frame-getting-started -->
+	<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+	<script>window.attachEvent('onload', function() {
+		CFInstall.check({mode:'overlay'})
+	})</script>
+	<![endif]-->
 </bdo>
 </body>
 </html>

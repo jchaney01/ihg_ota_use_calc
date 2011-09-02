@@ -297,14 +297,20 @@ td { vertical-align: top; }
 //Begin app styles
 
 @maskerHeight: 300px;
-@blueBuildingWidth:100px;
-@maskerWidth: 500px;
+@blueBuildingWidth:103px;
+@orangeBuildingWidth:@blueBuildingWidth;
+@maskerWidth: 450px;
 @blueBlgLeftOffset: 100px;
-@otaprofitLabelBackground:@blueBuildingWidth+20px;
+@orangeBlgLeftOffset: 180px;
+@otaprofitCont:@blueBuildingWidth;
 @rotatedtextAmount:-15deg;
 @rotatedWidth:50px;
 @rotatedFontSize:11px;
 @rotatedTopOffest:10px;
+@yourProfitAmountContWidth:@otaprofitCont;
+@buildingLabelPaddingAmount:4px;
+@buildingDollarFontSize:22px;
+@roomsNeededContWidth:65px;
 
 #buildingMasker{
 	height:@maskerHeight;
@@ -328,20 +334,46 @@ td { vertical-align: top; }
 	z-index:1;
 }
 
+#rightBuildingBase{
+	height:@maskerHeight;
+	background-color:#cc9900;
+	width:@orangeBuildingWidth;
+	position:absolute;
+	bottom:0;
+	left:@orangeBlgLeftOffset;
+	z-index:20;
+}
+
 #otaProfitAmountCont{
 	position:absolute;
 	left:0;
+	top:20px;
+	width:@otaprofitCont;
 }
 
 #otaProfitLabel{
-	width:@otaprofitLabelBackground;
+	width:100%;
 	background-color:red;
+	padding:@buildingLabelPaddingAmount;
+}
+
+#otaProfitAmount{
+	text-align:right;
+	padding-right:8px;
+	font-size:@buildingDollarFontSize;
 }
 
 #blueContent{
 	position:absolute;
 	height:	@maskerHeight;
 	bottom:0px; //Animate this to bring blue initially on
+}
+
+#orangeContent{
+	position:absolute;
+	height:	@maskerHeight;
+	bottom:-100px; //Animate this to bring blue initially on
+		
 }
 
 #d_roomsBase{
@@ -397,4 +429,53 @@ td { vertical-align: top; }
 	color:white;
 	font-size:@rotatedFontSize;
 	text-align:center;
+}
+
+#opaqueCopy{
+	-webkit-transform: rotate(@rotatedtextAmount);
+	position:absolute;
+	top:@rotatedTopOffest;
+	right:0;
+	width:@rotatedWidth;
+	color:white;
+	font-size:@rotatedFontSize;
+	text-align:center;
+}
+
+#yourProfitAmountCont{
+	width:@yourProfitAmountContWidth;
+	top:20px;
+	position:absolute;
+	left:@orangeBlgLeftOffset+@orangeBuildingWidth;
+}
+
+#yourProfitLabel{
+	background-color:red;
+	width:100%;
+}
+
+#yourProfitLabelText{
+	text-align:right;
+	padding:@buildingLabelPaddingAmount;
+}
+#yourProfitAmountDollarCont{
+	text-align:right;
+	font-size:@buildingDollarFontSize;
+}
+
+#roomsNeededCont{
+	width:@roomsNeededContWidth;
+	position:absolute;
+	left:@maskerWidth - @roomsNeededContWidth;
+	bottom:0px;
+}
+
+#roomsNeededCopy{
+	width:57px;
+	font-size:9px;
+	text-transform:uppercase;
+}
+
+#roomsNeededResult{
+	font-size:40px;
 }
