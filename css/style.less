@@ -292,9 +292,125 @@ td { vertical-align: top; }
 }
 
 
+//Begin GLoabl styles
+#masterContainer{
+	width:1000px;
+	height:800px;
+	margin: 0 auto;
+	position:relative;
+}
+//End global styles
 
 
-//Begin app styles
+//Begin form styles
+
+
+@labelFontSizeStandard: 11px;
+@labelFontSizeSmall: 10px;
+@labelFontSizeLarge: 15px;
+@generaltextSize:13px;
+
+@revenueInputWidth: 100px;
+@revenueInputHeightSmall: 20px;
+@revenueInputHeightLarge: 40px;
+
+@percentageInputWidthSmall: 50px;
+@percentageInputWidthlarge: 50px;
+@percentageInputHeightSmall: 10px;
+@percentageInputHeightLarge: 50px;
+
+@resultWidthLarge:100px;
+@resultWidthSmall:50px;
+
+@labelColor:black;
+@resultColor:black;
+@imputTextColor:black;
+@currencySymbolColor:black;
+@percentageSymbolColor:black;
+@highlightColor:orange;
+
+
+#formCont{
+	width:500px;
+	position:relative;
+	top:100px;
+}
+
+._GeneralPositioning{
+	position:absolute;
+	margin:0;
+	padding:0;
+}
+
+._GeneralInputStyles{
+	//background-color:transparent;
+	//border:none;
+	text-align:right;
+}
+
+._GeneralLabelStyles{
+	font-weight:bold;
+	text-transform:uppercase;
+
+}
+
+#mainTitle{
+	font-size:28px;
+	color:@highlightColor;
+	
+}
+
+#mainParagraph{
+	font-size:@generaltextSize;
+}
+
+#calcForm{
+	margin-top:10px;
+}
+
+#language{
+	._GeneralPositioning;
+	width:100px;
+}
+
+#symbol{
+	._GeneralPositioning;
+	width:40px;
+	left:110px;
+}
+
+#hotelName{
+	._GeneralPositioning;
+	._GeneralInputStyles;
+	width:180px;
+	left:170px;
+}
+
+#A{
+	._GeneralPositioning;
+	._GeneralInputStyles;
+	width:70px;
+	left:370px;
+}
+
+#L_A{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:70px;
+	left:373px;
+	top:115px;
+	font-size:@labelFontSizeStandard;	
+}
+
+
+
+
+
+//End form styles
+
+
+
+//Begin visualization styles
 
 @maskerHeight: 300px;
 @blueBuildingWidth:100px;
@@ -312,16 +428,28 @@ td { vertical-align: top; }
 @buildingDollarFontSize:22px;
 @roomsNeededContWidth:65px;
 
+
+
+#visualization{
+    position:absolute;
+    right:0;
+    width:600px;
+    height:500px;
+    top:200px;
+
+    }
+
 #buildingMasker{
 	height:@maskerHeight;
 	width:@maskerWidth;
 	position:absolute;
-	top:100px;
+	bottom:0;
 	left:100px;
 	overflow:hidden;
 	border-bottom-style:solid;
 	border-bottom-width:1px;
 	border-bottom-color:black;
+
 }
 
 #leftBuildingBase{
@@ -487,4 +615,6 @@ td { vertical-align: top; }
 	position:absolute;
 	top:71px;
 	left:@orangeBlgLeftOffset+@orangeBuildingWidth;
-}}
+}
+
+//End visualization styles

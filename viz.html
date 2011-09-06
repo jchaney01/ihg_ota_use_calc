@@ -42,41 +42,161 @@
 		<header>
 		</header>
 		<div id="main" role="main">
-			<div id="visualization">
-				<div id="buildingMasker">
-					<div id="orangeContent">
-						<div id="rightBuildingBase"></div>
-						<div id="yourProfitAmountCont">
-							<div id="yourProfitLabel">
-								<div id="yourProfitLabelText">Your Profit</div>
-							</div>
-							<div id="yourProfitAmountDollarCont">
-								<span class="curSymbol" id="yourProfitCurSymbol"></span><span id="yourProfitAmount">34,610</span>
-							</div>
-						</div>
-						<div id="miniBuildings"></div>
+			<div id="masterContainer">
+				<div id="formCont">
+					<div id="mainTitle">Calculate Your OTA Dependency</div>
+					<div id="mainParagraph">OTA bookings seem like an easy way to make profit, but you're only padding
+						the pockets of the OTA business. It dosen't take much work to replace the profits &mdash; use
+						this tool to find out how easy it is. Enter data in terms of one fiscial year.
 					</div>
-					<div id="roomsNeededCont">
-						<div id="roomsNeededCopy">Rooms needed on direct channels to replace profits
-							<div id="roomsNeededResult">388</div>
+					<form id="calcForm">
+						<select id="language">
+							<option value="English">English</option>
+							<option value="German">German</option>
+						</select>
+						<select id="symbol">
+							<option value="dollar">$</option>
+							<option value="euro">&euro;</option>
+							<option value="pound">&pound;</option>
+							<option value="yen">&yen;</option>
+						</select>
+
+						<!--User data-->
+
+						<input id="hotelName" type="text"/>
+						<input id="A"/>
+						<input id="B"/>
+						<input id="C"/>
+						<input id="D"/>
+						<input id="E"/>
+						<input id="F"/>
+						<input id="G"/>
+						<input id="H"/>
+						<input id="J"/>
+						<input id="K"/>
+						<input id="L"/>
+						<input id="M"/>
+						<input id="N"/>
+						<input id="P"/>
+						<input id="Q"/>
+						<input id="R"/>
+
+						<!--Calculated data-->
+
+						<div id="CE"></div>
+						<div id="HG"></div>
+						<div id="U"></div>
+						<div id="V"></div>
+						<div id="PN"></div>
+						<div id="W"></div>
+						<div id="S"></div>
+						<div id="T"></div>
+						<div id="TS"></div>
+						<div id="Z"></div>
+						<div id="b_"></div>
+						<div id="X"></div>
+						<div id="Y"></div>
+
+						<!--Percent symbols-->
+
+						<div id="Bp">%</div>
+						<div id="Jp">%</div>
+						<div id="Up">%</div>
+						<div id="Mp">%</div>
+						<div id="Vp">%</div>
+						<div id="Qp">%</div>
+						<div id="Wp">%</div>
+						<div id="Zp">%</div>
+						<div id="Rp">%</div>
+
+						<!--Currency Symbols-->
+
+						<div id="Cc">$</div>
+						<div id="Dc">$</div>
+						<div id="CEc">$</div>
+						<div id="Fc">$</div>
+						<div id="Hc">$</div>
+						<div id="HGc">$</div>
+						<div id="Lc">$</div>
+						<div id="LKc">$</div>
+						<div id="Pc">$</div>
+						<div id="PNc">$</div>
+						<div id="Tc">$</div>
+						<div id="TSc">$</div>
+						<div id="Xc">$</div>
+						<div id="Yc">$</div>
+
+						<!--Labels-->
+
+						<div id="L_hotelName">hotel name</div>
+						<div id="L_A">no. rooms</div>
+						<div id="L_B">occupancy</div>
+						<div id="L_C">revenue</div>
+						<div id="L_D">transient adr</div>
+						<div id="L_CE">adr</div>
+						<div id="L_E">total rooms sold</div>
+						<div id="L_F">variable room cost</div>
+						<div id="L_ota_rooms">ota rooms</div>
+						<div id="L_ota_rooms_only">rooms only</div>
+						<div id="L_no_sold">no. sold</div>
+						<div id="L_revenue">revenue</div>
+						<div id="L_adr">adr</div>
+						<div id="L_comm">commission</div>
+						<div id="L_comm_std">standard</div>
+						<div id="L_weighted">weighted</div>
+						<div id="L_package">package</div>
+						<div id="L_opaque">opaque</div>
+						<div id="L_S">total ota rooms sold</div>
+						<div id="L_T">total ota revenue</div>
+						<div id="L_TS">ota adr</div>
+						<div id="L_Z">avg ota commission</div>
+						<div id="L_R">recommended incremental rooms</div>
+						<div id="L_b_">ota incremental rooms</div>
+						<div id="L_X">incremental ota revenue</div>
+						<div id="L_Y">cost of servicing ota rooms</div>
+
+						<!--Buttons-->
+						
+						<div id="calculateBTN">Calculate</div>
+						<div id="clearBTN">Clear Form</div>
+					</form>
+				</div>
+				<div id="visualization">
+					<div id="buildingMasker">
+						<div id="orangeContent">
+							<div id="rightBuildingBase"></div>
+							<div id="yourProfitAmountCont">
+								<div id="yourProfitLabel">
+									<div id="yourProfitLabelText">Your Profit</div>
+								</div>
+								<div id="yourProfitAmountDollarCont">
+									<span class="curSymbol" id="yourProfitCurSymbol"></span><span id="yourProfitAmount">34,610</span>
+								</div>
+							</div>
+							<div id="miniBuildings"></div>
 						</div>
-					</div>
-					<div id="blueContent">
-						<div id="curencyParticles"></div>
-						<div id="f_opaque">
-							<div id="opaqueCopy">Opaque</div>
+						<div id="roomsNeededCont">
+							<div id="roomsNeededCopy">Rooms needed on direct channels to replace profits
+								<div id="roomsNeededResult">388</div>
+							</div>
 						</div>
-						<div id="e_packageBase">
-							<div id="packageCopy">Package</div>
-						</div>
-						<div id="d_roomsBase">
-							<div id="roomsOnlyCopy">Rooms Only</div>
-						</div>
-						<div id="leftBuildingBase"></div>
-						<div id="otaProfitAmountCont">
-							<div id="otaProfitLabel">OTA Profit</div>
-							<div id="otaProfitAmount"><span class="curSymbol" id="otaProfitCurSymbol"></span><span
-									id="otaProfitAmountISO">48,187</span></div>
+						<div id="blueContent">
+							<div id="curencyParticles"></div>
+							<div id="f_opaque">
+								<div id="opaqueCopy">Opaque</div>
+							</div>
+							<div id="e_packageBase">
+								<div id="packageCopy">Package</div>
+							</div>
+							<div id="d_roomsBase">
+								<div id="roomsOnlyCopy">Rooms Only</div>
+							</div>
+							<div id="leftBuildingBase"></div>
+							<div id="otaProfitAmountCont">
+								<div id="otaProfitLabel">OTA Profit</div>
+								<div id="otaProfitAmount"><span class="curSymbol" id="otaProfitCurSymbol"></span><span
+										id="otaProfitAmountISO">48,187</span></div>
+							</div>
 						</div>
 					</div>
 				</div>
