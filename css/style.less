@@ -305,22 +305,23 @@ td { vertical-align: top; }
 //Begin form styles
 
 
-@labelFontSizeStandard: 11px;
+@labelFontSizeStandard: 10px;
 @labelFontSizeSmall: 10px;
 @labelFontSizeLarge: 15px;
 @generaltextSize:13px;
 
-@revenueInputWidth: 100px;
-@revenueInputHeightSmall: 20px;
-@revenueInputHeightLarge: 40px;
+@revenueInputWidth: 120px;
+@revenueInputHeightSmall: 17px;
+@revenueInputHeightLarge: 25px;
 
 @percentageInputWidthSmall: 50px;
 @percentageInputWidthlarge: 50px;
-@percentageInputHeightSmall: 10px;
+@percentageInputHeightSmall: 17px;
 @percentageInputHeightLarge: 50px;
 
-@resultWidthLarge:100px;
+@resultWidthLarge:90px;
 @resultWidthSmall:50px;
+@resultHeight:19px;
 
 @labelColor:black;
 @resultColor:black;
@@ -329,9 +330,19 @@ td { vertical-align: top; }
 @percentageSymbolColor:black;
 @highlightColor:orange;
 
+@labelOffsetFromField:25px;
+@row1Top: 90px;
+@row2Top: 140px;
+@row3Top: 210px;
+@row4Top: 295px;
+@row5Top: 330px;
+@row6Top: 365px;
+@row7Top: 410px;
+@row8Top: 475px;
+@row9Top: 550px;
 
 #formCont{
-	width:500px;
+	width:490px;
 	position:relative;
 	top:100px;
 }
@@ -348,9 +359,18 @@ td { vertical-align: top; }
 	text-align:right;
 }
 
+._GeneralResultStyles{
+	background-color:#cccccc;
+	border:solid;
+	border-width:1px;
+	text-align:right;
+	color:@resultColor;
+}
+
 ._GeneralLabelStyles{
 	font-weight:bold;
 	text-transform:uppercase;
+	color:@labelColor;
 
 }
 
@@ -371,12 +391,14 @@ td { vertical-align: top; }
 #language{
 	._GeneralPositioning;
 	width:100px;
+	top:@row1Top;
 }
 
 #symbol{
 	._GeneralPositioning;
 	width:40px;
 	left:110px;
+	top:@row1Top;
 }
 
 #hotelName{
@@ -384,6 +406,7 @@ td { vertical-align: top; }
 	._GeneralInputStyles;
 	width:180px;
 	left:170px;
+	top:@row1Top;
 }
 
 #A{
@@ -391,6 +414,45 @@ td { vertical-align: top; }
 	._GeneralInputStyles;
 	width:70px;
 	left:370px;
+	top:@row1Top;
+	z-index:999;
+}
+
+#B{
+	._GeneralPositioning;
+	._GeneralInputStyles;
+	width:@percentageInputWidthSmall;
+	left:0;
+	top:@row2Top;
+	height:@percentageInputHeightSmall;
+}
+#C{
+	._GeneralPositioning;
+	._GeneralInputStyles;
+	width:@revenueInputWidth;
+	left:85px;
+	top:@row2Top;
+	height:@revenueInputHeightSmall;
+}
+
+#D{
+	._GeneralPositioning;
+	._GeneralInputStyles;
+	width:@revenueInputWidth;
+	left:220px;
+	top:@row2Top;
+	height:@revenueInputHeightSmall;
+}
+
+
+#CE{
+	._GeneralPositioning;
+	._GeneralResultStyles;
+	width:@resultWidthLarge;
+	left:354px;
+	top:@row2Top;
+	height:@resultHeight;
+
 }
 
 #L_A{
@@ -398,16 +460,479 @@ td { vertical-align: top; }
 	._GeneralLabelStyles;
 	width:70px;
 	left:373px;
-	top:115px;
+	top:@row1Top+@labelOffsetFromField;
 	font-size:@labelFontSizeStandard;	
 }
 
+#L_hotelName{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:100px;
+	left:170px;
+	top:@row1Top+@labelOffsetFromField;
+	font-size:@labelFontSizeStandard;
+}
+
+#L_B{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:70px;
+	left:0;
+	top:@row2Top+@labelOffsetFromField;
+	font-size:@labelFontSizeStandard;
+}
+
+#L_C{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:70px;
+	left:85px;
+	top:@row2Top+@labelOffsetFromField;
+	font-size:@labelFontSizeStandard;
+}
+
+#L_D{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:100px;
+	left:220px;
+	top:@row2Top+@labelOffsetFromField;
+	font-size:@labelFontSizeStandard;
+}
+
+#L_CE{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:100px;
+	left:358px;
+	top:@row2Top+@labelOffsetFromField;
+	font-size:@labelFontSizeStandard;
+}
+
+#L_E{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:200px;
+	left:0;
+	top:@row3Top+@labelOffsetFromField+8;
+	font-size:@labelFontSizeStandard;
+}
+
+#L_F{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:200px;
+	left:150px;
+	top:@row3Top+@labelOffsetFromField+8;
+	font-size:@labelFontSizeStandard;
+}
+
+#E{
+	._GeneralPositioning;
+	._GeneralInputStyles;
+	left:0;
+	top:@row3Top;
+	width:@revenueInputWidth;
+	height:@revenueInputHeightLarge;
+
+}
+
+#F{
+	._GeneralPositioning;
+	._GeneralInputStyles;
+	left:150px;
+	top:@row3Top;
+	width:@revenueInputWidth;
+	height:@revenueInputHeightLarge;
+}
+
+#L_ota_rooms{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:200px;
+	left:0;
+	top:( @row4Top - @labelOffsetFromField ) + 8;
+	font-size:@labelFontSizeStandard;
+	color:#666666;
+}
+
+#L_no_sold{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:200px;
+	left:100px;
+	top:( @row4Top - @labelOffsetFromField ) + 8;
+	font-size:@labelFontSizeStandard;
+}
+
+#L_revenue{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:200px;
+	left:160px;
+	top:( @row4Top - @labelOffsetFromField ) + 8;
+	font-size:@labelFontSizeStandard;
+}
+
+#L_adr{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:200px;
+	left:240px;
+	top:( @row4Top - @labelOffsetFromField ) + 8;
+	font-size:@labelFontSizeStandard;
+}
+
+#L_comm{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:200px;
+	left:310px;
+	top:@row4Top - @labelOffsetFromField - 8;
+	font-size:@labelFontSizeStandard + 1;
+}
 
 
+#L_comm_std{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:200px;
+	left:310px;
+	top:( @row4Top - @labelOffsetFromField ) + 8;
+	font-size:@labelFontSizeStandard;
+}
 
+#L_weighted{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:200px;
+	left:390px;
+	top:( @row4Top - @labelOffsetFromField ) + 8;
+	font-size:@labelFontSizeStandard;
+}
+
+
+#G{
+	._GeneralPositioning;
+	._GeneralInputStyles;
+	width:45px;
+	left:100px;
+	top:@row4Top;
+}
+
+#K{
+	._GeneralPositioning;
+	._GeneralInputStyles;
+	width:45px;
+	left:100px;
+	top:@row5Top;
+}
+
+#N{
+	._GeneralPositioning;
+	._GeneralInputStyles;
+	width:45px;
+	left:100px;
+	top:@row6Top;
+}
+
+#H{
+	._GeneralPositioning;
+	._GeneralInputStyles;
+	width:65px;
+	left:160px;
+	top:@row4Top;
+}
+
+#L{
+	._GeneralPositioning;
+	._GeneralInputStyles;
+	width:65px;
+	left:160px;
+	top:@row5Top;
+}
+
+#P{
+	._GeneralPositioning;
+	._GeneralInputStyles;
+	width:65px;
+	left:160px;
+	top:@row6Top;
+}
+
+#HG{
+	._GeneralPositioning;
+	._GeneralResultStyles;
+	width:55px;
+	left:240px;
+	top:@row4Top;
+	height:@resultHeight - 2;
+
+}
+
+#LK{
+	._GeneralPositioning;
+	._GeneralResultStyles;
+	width:55px;
+	left:240px;
+	top:@row5Top;
+	height:@resultHeight - 2;
+
+}
+
+#PN{
+	._GeneralPositioning;
+	._GeneralResultStyles;
+	width:55px;
+	left:240px;
+	top:@row6Top;
+	height:@resultHeight - 2;
+
+}
+
+#J{
+	._GeneralPositioning;
+	._GeneralInputStyles;
+	width:65px;
+	left:310px;
+	top:@row4Top;
+}
+
+#M{
+	._GeneralPositioning;
+	._GeneralInputStyles;
+	width:65px;
+	left:310px;
+	top:@row5Top;
+}
+
+#Q{
+	._GeneralPositioning;
+	._GeneralInputStyles;
+	width:65px;
+	left:310px;
+	top:@row6Top;
+}
+
+#U{
+	._GeneralPositioning;
+	._GeneralResultStyles;
+	width:55px;
+	left:390px;
+	top:@row4Top;
+	height:@resultHeight - 2;
+
+}
+
+#V{
+	._GeneralPositioning;
+	._GeneralResultStyles;
+	width:55px;
+	left:390px;
+	top:@row5Top;
+	height:@resultHeight - 2;
+
+}
+
+#W{
+	._GeneralPositioning;
+	._GeneralResultStyles;
+	width:55px;
+	left:390px;
+	top:@row6Top;
+	height:@resultHeight - 2;
+
+}
+
+#S{
+	._GeneralPositioning;
+	._GeneralResultStyles;
+	width:100px;
+	left:0;
+	top:@row7Top;
+	height:@resultHeight;
+
+}
+
+#b_{
+	._GeneralPositioning;
+	._GeneralResultStyles;
+	width:100px;
+	left:0;
+	top:@row9Top;
+	height:@resultHeight;
+
+}
+
+#T{
+	._GeneralPositioning;
+	._GeneralResultStyles;
+	width:100px;
+	left:115px;
+	top:@row7Top;
+	height:@resultHeight;
+
+}
+
+#X{
+	._GeneralPositioning;
+	._GeneralResultStyles;
+	width:100px;
+	left:115px;
+	top:@row9Top;
+	height:@resultHeight;
+
+}
+
+#TS{
+	._GeneralPositioning;
+	._GeneralResultStyles;
+	width:100px;
+	left:230px;
+	top:@row7Top;
+	height:@resultHeight;
+
+}
+#Y{
+	._GeneralPositioning;
+	._GeneralResultStyles;
+	width:100px;
+	left:230px;
+	top:@row9Top;
+	height:@resultHeight;
+
+}
+
+#Z{
+	._GeneralPositioning;
+	._GeneralResultStyles;
+	width:100px;
+	left:345px;
+	top:@row7Top;
+	height:@resultHeight;
+
+}
+
+#L_ota_rooms_only{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:100px;
+	left:0;
+	top:@row4Top + 3;
+	font-size:@labelFontSizeLarge;
+	color:#666666;
+	text-transform:capitalize;
+	font-weight:normal;
+}
+
+#L_package{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:50px;
+	left:0;
+	top:@row5Top + 3;
+	font-size:@labelFontSizeLarge;
+	color:#666666;
+	text-transform:capitalize;
+	font-weight:normal;
+}
+
+#L_opaque{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:10px;
+	left:0;
+	top:@row6Top + 3;
+	font-size:@labelFontSizeLarge;
+	color:#666666;
+	text-transform:capitalize;
+	font-weight:normal;
+}
+
+#R{
+	._GeneralPositioning;
+	._GeneralInputStyles;
+	left:0;
+	top:@row8Top;
+	width:@revenueInputWidth;
+	height:@revenueInputHeightLarge;
+
+}
+
+#L_S{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:75px;
+	left:0;
+	top:@row7Top+@labelOffsetFromField;
+	font-size:@labelFontSizeStandard;
+}
+
+#L_T{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:90px;
+	left:115px;
+	top:@row7Top+@labelOffsetFromField;
+	font-size:@labelFontSizeStandard;
+}
+
+#L_TS{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:90px;
+	left:230px;
+	top:@row7Top+@labelOffsetFromField;
+	font-size:@labelFontSizeStandard;
+	color:#666666;
+}
+
+#L_Z{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:90px;
+	left:345px;
+	top:@row7Top+@labelOffsetFromField;
+	font-size:@labelFontSizeStandard;
+}
+
+#L_R{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:150px;
+	left:0;
+	top:@row8Top+@labelOffsetFromField + 8;
+	font-size:@labelFontSizeStandard;
+}
+
+#L_b_{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:100px;
+	left:0;
+	top:@row9Top+@labelOffsetFromField;
+	font-size:@labelFontSizeStandard;
+}
+
+#L_X{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:100px;
+	left:115px;
+	top:@row9Top+@labelOffsetFromField;
+	font-size:@labelFontSizeStandard;
+}
+
+#L_Y{
+	._GeneralPositioning;
+	._GeneralLabelStyles;
+	width:120px;
+	left:230px;
+	top:@row9Top+@labelOffsetFromField;
+	font-size:@labelFontSizeStandard;
+}
 
 //End form styles
-
 
 
 //Begin visualization styles
@@ -428,14 +953,16 @@ td { vertical-align: top; }
 @buildingDollarFontSize:22px;
 @roomsNeededContWidth:65px;
 
-
+#devPusher{
+	margin-bottom:800px;
+}
 
 #visualization{
     position:absolute;
     right:0;
     width:600px;
     height:500px;
-    top:200px;
+    top:100px;
 
     }
 

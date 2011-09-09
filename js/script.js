@@ -140,9 +140,9 @@ var sample = {
 		T_opaque			: "Opaque"
 	},
 	OTAProfitAmount: 48187,
-	percentPackage: 80,
+	percentPackage: 60,
 	percentRooms: 90,
-	percentOpaque: 60,
+	percentOpaque: 40,
 	yourProfit: 34610,
 	rightBldgPercent: 50,
 	roomsNeeded: 388, //Included to keep all calculations in one place
