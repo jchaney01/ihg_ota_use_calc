@@ -13,6 +13,10 @@ window.log = function() {
 })(window.console = window.console || {});
 
 var formats = {
+	Universal:{
+		format: "###.00000000",
+		locale: "us"
+	},
 	English : {
 		format: "#,###.00",
 		locale: "us"
@@ -55,6 +59,8 @@ function convertNumberFormat(sourceNumber, sourceLanguage, destinationLanguage) 
 
 function init(vo) {
 
+	log(vo);
+
 	if (validateData(vo)) {
 
 		$('#blueContent').stop().animate({
@@ -62,19 +68,19 @@ function init(vo) {
 		}, 1000);
 
 		$('#orangeContent').stop().delay(1500).animate({
-			bottom:"-" + getHeightFromPercent(vo.rightBldgPercent) + "px"
+			bottom:"-" + getHeightFromPercent(vo.rightBldgPercent, "Orange section") + "px"
 		}, 1000);
 
 		$('#d_roomsBase').stop().delay(300).animate({
-			bottom:"-" + getHeightFromPercent(vo.percentRooms) + "px"
+			bottom:"-" + getHeightFromPercent(vo.percentRooms, "Rooms only percentage bar") + "px"
 		}, 800);
 
 		$('#e_packageBase').stop().delay(800).animate({
-			bottom:"-" + getHeightFromPercent(vo.percentPackage) + "px"
+			bottom:"-" + getHeightFromPercent(vo.percentPackage, "Package only percentage bar") + "px"
 		}, 600);
 
 		$('#f_opaque').stop().delay(1200).animate({
-			bottom:"-" + getHeightFromPercent(vo.percentOpaque) + "px"
+			bottom:"-" + getHeightFromPercent(vo.percentOpaque, "Opaque only percentage bar") + "px"
 		}, 500);
 
 		$('#roomsNeededCont').stop().delay(1800).animate({
@@ -96,18 +102,18 @@ function init(vo) {
 	}
 }
 
-function getHeightFromPercent(percent) {
+function getHeightFromPercent(percent, logNote) {
 	var total = $("#buildingMasker").height();
 	var pixels = ((percent / 100) * total);
 	var result = total - pixels; //  //100% is 0 and 0% is the height of the element so we flip it
 
 	//Trap if more than 100% was passed.  If so, someone messed up!
 	if (result < 0) {
-		log("Critical Application Error: Profit percentage passed to visualization exceeds 100%.  Capping value.");
+		log("Critical Application Error: "+logNote+" percentage passed to visualization exceeds 100%.  Capping value for display but this is a programatic issue.");
 		result = 0;
 	}
 	if (result > 230) { //this number is the threshold for what is too small to show, decrease from height of mask
-		log("Notice: Profit height too small to show.  Will animate to min allowed for display.");
+		log("Notice: "+logNote+" height too small to show.  Will animate to min allowed for display. Pixel count is only "+pixels);
 		return 230; // lower is visually higher
 	} else {
 		return(result);
@@ -135,41 +141,40 @@ function calculate(){
 
 	//Note var namnes match /comps/formulas.png
 
-	//First, convert everythign to American for math operations
-	var A = convertNumberFormat($('#A').val(), $("#language").val(), "English");
-	var B = convertNumberFormat($('#B').val(), $("#language").val(), "English");
-	var C = convertNumberFormat($('#C').val(), $("#language").val(), "English");
-	var D = convertNumberFormat($('#D').val(), $("#language").val(), "English");
-	var E = convertNumberFormat($('#E').val(), $("#language").val(), "English");
-	var F = convertNumberFormat($('#F').val(), $("#language").val(), "English");
-	var G = convertNumberFormat($('#G').val(), $("#language").val(), "English");
-	var H = convertNumberFormat($('#H').val(), $("#language").val(), "English");
-	var J = convertNumberFormat($('#J').val(), $("#language").val(), "English");
-	var K = convertNumberFormat($('#K').val(), $("#language").val(), "English");
-	var L = convertNumberFormat($('#L').val(), $("#language").val(), "English");
-	var M = convertNumberFormat($('#M').val(), $("#language").val(), "English");
-	var N = convertNumberFormat($('#N').val(), $("#language").val(), "English");
-	var P = convertNumberFormat($('#P').val(), $("#language").val(), "English");
-	var Q = convertNumberFormat($('#Q').val(), $("#language").val(), "English");
-	var R = convertNumberFormat($('#R').val(), $("#language").val(), "English");
+	//First, convert everythign to universal for math operations
+	var A = convertNumberFormat($('#A').val(), $("#language").val(), "Universal");
+	var B = convertNumberFormat($('#B').val(), $("#language").val(), "Universal");
+	var C = convertNumberFormat($('#C').val(), $("#language").val(), "Universal");
+	var D = convertNumberFormat($('#D').val(), $("#language").val(), "Universal");
+	var E = convertNumberFormat($('#E').val(), $("#language").val(), "Universal");
+	var F = convertNumberFormat($('#F').val(), $("#language").val(), "Universal");
+	var G = convertNumberFormat($('#G').val(), $("#language").val(), "Universal");
+	var H = convertNumberFormat($('#H').val(), $("#language").val(), "Universal");
+	var J = convertNumberFormat($('#J').val(), $("#language").val(), "Universal");
+	var K = convertNumberFormat($('#K').val(), $("#language").val(), "Universal");
+	var L = convertNumberFormat($('#L').val(), $("#language").val(), "Universal");
+	var M = convertNumberFormat($('#M').val(), $("#language").val(), "Universal");
+	var N = convertNumberFormat($('#N').val(), $("#language").val(), "Universal");
+	var P = convertNumberFormat($('#P').val(), $("#language").val(), "Universal");
+	var Q = convertNumberFormat($('#Q').val(), $("#language").val(), "Universal");
+	var R = convertNumberFormat($('#R').val(), $("#language").val(), "Universal");
 
 	//Next, generate the calculated values
-
 	var CE = C/E;
 	var HG = H/G;
-	var U = (G/S)*J;
 	var LK = L/K;
-	var V = (K/S)*M;
 	var PN = P/N;
-	var W = (N/S)*Q;
 	var S = Number(G)+Number(K)+Number(N);
+	var W = (N/S)*Q;
+	var V = (K/S)*M;
+	var U = (Number(G) / Number(S)) * Number(J);
 	var T = Number(H)+Number(L)+Number(P);
 	var TS = T/S;
 	var Z = Number(U)+Number(V)+Number(W);
-	var b_ = (Number(G)+Number(K)+Number(N))*R;
-	var X = R*T;
+	var b_ = (Number(G)+Number(K)+Number(N))*(R*0.01);
+	var X = (R*0.01)*T;
 	var Y = F*S;
-
+	
 	//Calculate the value object the visualization needs here. Copy still needs to be pulled from global JSON (which is created from the Excel language matrix)
 
 	var vo = {
@@ -189,10 +194,10 @@ function calculate(){
 			T_package			: "Package",
 			T_opaque			: "Opaque"
 		},
-		OTAProfitAmount: Z*T,
+		OTAProfitAmount: (Z*0.01)*T,
 		percentPackage: (M*L)/(Z*T),
 		percentRooms: (H*J)/(Z*T),
-		percentOpaque: (Q*P)/(Z*T),
+		percentOpaque: ((Q*0.01)*P)/(Z*T),
 		yourProfit: X-Y,
 		rightBldgPercent: 50, //Figure this out
 		roomsNeeded: A/(((H*J)/(Z*T))-((Q*P)/(Z*T))),
@@ -225,8 +230,25 @@ function calculate(){
 
 //This is used for development to prepopulate the form with English FPO data
 function populateFPO(){
-	$('#A').val(123);
-
+	$("#language").val("English");
+	$("#symbol").val("$");
+	$(".currency").html("$");
+	$('#A').val(187);
+	$('#B').val(64.2);
+	$('#C').val("4,213,786");
+	$('#D').val(105.32);
+	$('#E').val("43,820");
+	$('#F').val(16.32);
+	$('#G').val("2,000");
+	$('#H').val("170,000");
+	$('#J').val(15);
+	$('#K').val(300);
+	$('#L').val("22,500");
+	$('#M').val(25);
+	$('#N').val(700);
+	$('#P').val("45,500");
+	$('#Q').val(35);
+	$('#R').val(35);
 }
 
 //Sample object
