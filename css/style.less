@@ -346,19 +346,23 @@ td { vertical-align: top; }
 #formCont{
 	width:490px;
 	position:relative;
-	top:100px;
+	top:50px;
+	left:50px;
+	z-index:2;
 }
 
 ._GeneralPositioning{
 	position:absolute;
 	margin:0;
 	padding:0;
+
 }
 
 ._GeneralInputStyles{
 	//background-color:transparent;
 	//border:none;
 	text-align:right;
+	padding:2px;
 }
 
 ._GeneralResultStyles{
@@ -367,6 +371,7 @@ td { vertical-align: top; }
 	border-width:1px;
 	text-align:right;
 	color:@resultColor;
+	padding:2px;
 }
 
 ._GeneralLabelStyles{
@@ -1000,21 +1005,21 @@ td { vertical-align: top; }
 
 #Hc{
 	._GeneralPositioning;
-	top:@row4Top+1;
+	top:@row4Top+2;
 	left:165px;
 	font-size:@smallSymbolSize;
 }
 
 #Lc{
 	._GeneralPositioning;
-	top:@row5Top+1;
+	top:@row5Top+2;
 	left:165px;
 	font-size:@smallSymbolSize;
 }
 
 #Pc{
 	._GeneralPositioning;
-	top:@row6Top+1;
+	top:@row6Top+2;
 	left:165px;
 	font-size:@smallSymbolSize;
 }
@@ -1152,19 +1157,19 @@ td { vertical-align: top; }
 
 #visualization{
     position:absolute;
-    right:0;
-    width:600px;
-    height:500px;
-    top:100px;
-
-    }
+    right:-150px;
+    width:750px;
+    height:700px;
+    top:0px;
+    background-color:#d2691e;
+}
 
 #buildingMasker{
 	height:@maskerHeight;
 	width:@maskerWidth;
 	position:absolute;
-	bottom:0;
-	left:100px;
+	bottom:130px;
+	left:150px;
 	overflow:hidden;
 	border-bottom-style:solid;
 	border-bottom-width:1px;

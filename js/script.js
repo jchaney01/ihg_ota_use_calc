@@ -61,7 +61,12 @@ function init(vo) {
 
 	log(vo);
 
+	$('#yourProfitCurSymbol').html($("#symbol").val());
+	$('#roomsNeededResult').html(vo.roomsNeeded);
+
 	if (validateData(vo)) {
+
+		$("#yourProfitAmount").html(vo.yourProfit);
 
 		$('#blueContent').stop().animate({
 			bottom:'0'
@@ -93,13 +98,17 @@ function init(vo) {
 		$(from).animate(to, {
 			duration:1000,
 			step: function() {
-				$('#otaProfitAmount').html(formatAmericanNumberToLanguage(this.properity, vo.language));
+				$('#otaProfitAmount').html('<span class="currency" id="otaProfitCurSymbol">'+$("#symbol").val()+'</span>'+formatAmericanNumberToLanguage(this.properity, vo.language));
 			},
 			complete:function() {
-				$('#otaProfitAmount').html(formatAmericanNumberToLanguage(to.properity, vo.language));
+				$('#otaProfitAmount').html('<span class="currency" id="otaProfitCurSymbol">'+$("#symbol").val()+'</span>'+formatAmericanNumberToLanguage(to.properity, vo.language));
 			}
 		});
 	}
+}
+
+function truncateUniversalNum(i){ //Truncates to two decimals
+	return Math.round(i*100)/100
 }
 
 function getHeightFromPercent(percent, logNote) {
@@ -176,6 +185,7 @@ function calculate(){
 	var Y = F*S;
 	
 	//Calculate the value object the visualization needs here. Copy still needs to be pulled from global JSON (which is created from the Excel language matrix)
+	//Also need to truncate these to two decimal points.
 
 	var vo = {
 		language: $("#language").val(),
@@ -194,18 +204,20 @@ function calculate(){
 			T_package			: "Package",
 			T_opaque			: "Opaque"
 		},
-		OTAProfitAmount: (Z*0.01)*T,
-		percentPackage: (M*L)/(Z*T),
-		percentRooms: (H*J)/(Z*T),
-		percentOpaque: ((Q*0.01)*P)/(Z*T),
-		yourProfit: X-Y,
-		rightBldgPercent: 50, //Figure this out
-		roomsNeeded: A/(((H*J)/(Z*T))-((Q*P)/(Z*T))),
+		OTAProfitAmount: truncateUniversalNum((Z*0.01)*T),
+		percentPackage: ((((M*0.01)*L)/((Z*0.01)*T))*100)+((((Q*0.01)*P)/((Z*0.01)*T))*100),
+//		percentRooms: ((H*(J*0.01)) / ((Z*0.01)*T))*100,
+		percentRooms: 100,
+		percentOpaque: (((Q*0.01)*P)/((Z*0.01)*T))*100,
+		yourProfit: truncateUniversalNum(X-Y),
+		rightBldgPercent: ((X-Y)*100)/((Z*0.01)*T),
+		roomsNeeded: (X-Y)/(D-F),
 		otaRoomContPercentage: S/E,
 		otaIncreRoomContPercent: b_/E
 	}
 
-	//Finally, populate the fields with the correct formatting and launch visualization
+
+	//Finally, populate the fields with the correct formatting and launch visualizationz
 
 	$('#CE').html(  convertNumberFormat(CE, "English", $("#language").val()));
 	$('#HG').html(  convertNumberFormat(HG, "English", $("#language").val()));
@@ -238,7 +250,7 @@ function populateFPO(){
 	$('#C').val("4,213,786");
 	$('#D').val(105.32);
 	$('#E').val("43,820");
-	$('#F').val(16.32);
+	$('#F').val(16.23);
 	$('#G').val("2,000");
 	$('#H').val("170,000");
 	$('#J').val(15);
