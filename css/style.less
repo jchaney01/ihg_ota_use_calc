@@ -32,7 +32,11 @@ audio:not([controls]) { display: none; }
 
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
-body { margin: 0; font-size: 13px; line-height: 1.231; }
+body { margin: 0; font-size: 13px; line-height: 1.231;
+
+background-image:url("../img/bkgTitle.png");
+background-repeat:repeat-x;
+ }
 
 body, button, input, select, textarea { font-family: sans-serif; color: #222; }
 
@@ -309,8 +313,8 @@ td { vertical-align: top; }
 @labelFontSizeSmall: 10px;
 @labelFontSizeLarge: 15px;
 @generaltextSize:13px;
-@smallSymbolSize:15px;
-@largeSymbolSize:22px;
+@smallSymbolSize:16px;
+@largeSymbolSize:24px;
 
 @revenueInputWidth: 120px;
 @revenueInputHeightSmall: 17px;
@@ -326,13 +330,12 @@ td { vertical-align: top; }
 @resultHeight:19px;
 
 @labelColor:black;
-@resultColor:black;
+@resultColor:#999999;
 @imputTextColor:black;
-@currencySymbolColor:black;
-@percentageSymbolColor:black;
-@highlightColor:orange;
+@symbolColor:#999999;
+@highlightColor:#D64024;
 
-@labelOffsetFromField:25px;
+@labelOffsetFromField:29px;
 @row1Top: 90px;
 @row2Top: 140px;
 @row3Top: 210px;
@@ -355,7 +358,7 @@ td { vertical-align: top; }
 	position:absolute;
 	margin:0;
 	padding:0;
-
+	z-index:999;
 }
 
 ._GeneralInputStyles{
@@ -363,22 +366,38 @@ td { vertical-align: top; }
 	//border:none;
 	text-align:right;
 	padding:2px;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 4px 4px 8px #C9C9C9;
+ 	-webkit-box-shadow: 4px 4px 8px #C9C9C9;
+ 	box-shadow: 4px 4px 8px #C9C9C9;
+ 	border-color:#6F6F6F;
+ 	border-width:1px;
+ 		
+    
 }
 
 ._GeneralResultStyles{
-	background-color:#cccccc;
-	border:solid;
-	border-width:1px;
+	background-color:transparent;
+	border-right:solid;
+	border-left:solid;
+	border-bottom:solid;
+	border-width:2px;
 	text-align:right;
 	color:@resultColor;
 	padding:2px;
-}
+	border-color:@resultColor;
 
+}
 ._GeneralLabelStyles{
 	font-weight:bold;
 	text-transform:uppercase;
 	color:@labelColor;
+}
 
+._GeneralSymbolStyles{
+	color:@symbolColor;
 }
 
 #mainTitle{
@@ -416,13 +435,21 @@ td { vertical-align: top; }
 	top:@row1Top;
 }
 
+#dl1{
+	._GeneralPositioning;
+	top:195px;
+	height:2px;
+	width:455px;
+	background-color:black;
+}
+
 #A{
 	._GeneralPositioning;
 	._GeneralInputStyles;
 	width:70px;
 	left:370px;
 	top:@row1Top;
-	z-index:999;
+
 }
 
 #B{
@@ -861,7 +888,7 @@ td { vertical-align: top; }
 	._GeneralInputStyles;
 	left:0;
 	top:@row8Top;
-	width:@revenueInputWidth;
+	width:@revenueInputWidth - 20;
 	height:@revenueInputHeightLarge;
 
 }
@@ -944,6 +971,7 @@ td { vertical-align: top; }
 	top:@row2Top+2;
 	left:3px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;
 }
 
 #Up{
@@ -951,6 +979,7 @@ td { vertical-align: top; }
 	top:@row4Top+1;
 	left:395px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles
 }
 
 #Vp{
@@ -958,6 +987,7 @@ td { vertical-align: top; }
 	top:@row5Top+1;
 	left:395px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;
 }
 
 #Wp{
@@ -965,6 +995,7 @@ td { vertical-align: top; }
 	top:@row6Top+1;
 	left:395px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;
 }
 
 
@@ -973,6 +1004,7 @@ td { vertical-align: top; }
 	top:@row4Top+1;
 	left:315px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;
 }
 
 #Mp{
@@ -980,6 +1012,7 @@ td { vertical-align: top; }
 	top:@row5Top+1;
 	left:315px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;
 }
 
 #Qp{
@@ -987,6 +1020,7 @@ td { vertical-align: top; }
 	top:@row6Top+1;
 	left:315px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;
 }
 
 #Cc{
@@ -994,6 +1028,7 @@ td { vertical-align: top; }
 	top:@row2Top+2;
 	left:90px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;	
 }
 
 #Dc{
@@ -1001,6 +1036,7 @@ td { vertical-align: top; }
 	top:@row2Top+2;
 	left:225px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;
 }
 
 #Hc{
@@ -1008,6 +1044,7 @@ td { vertical-align: top; }
 	top:@row4Top+2;
 	left:165px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;
 }
 
 #Lc{
@@ -1015,6 +1052,7 @@ td { vertical-align: top; }
 	top:@row5Top+2;
 	left:165px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;
 }
 
 #Pc{
@@ -1022,6 +1060,7 @@ td { vertical-align: top; }
 	top:@row6Top+2;
 	left:165px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;
 }
 
 #HGc{
@@ -1029,6 +1068,7 @@ td { vertical-align: top; }
 	top:@row4Top+1;
 	left:245px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;	
 }
 
 #LKc{
@@ -1036,6 +1076,7 @@ td { vertical-align: top; }
 	top:@row5Top+1;
 	left:245px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;
 }
 
 #PNc{
@@ -1043,6 +1084,7 @@ td { vertical-align: top; }
 	top:@row6Top+1;
 	left:245px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;
 }
 
 #CEc{
@@ -1050,6 +1092,7 @@ td { vertical-align: top; }
 	top:@row2Top+2;
 	left:360px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;
 }
 
 #Fc{
@@ -1057,6 +1100,7 @@ td { vertical-align: top; }
 	top:@row3Top+1;
 	left:157px;
 	font-size:@largeSymbolSize;
+	._GeneralSymbolStyles;	
 }
 
 #Tc{
@@ -1064,6 +1108,7 @@ td { vertical-align: top; }
 	top:@row7Top+2;
 	left:120px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;
 }
 
 #TSc{
@@ -1071,6 +1116,7 @@ td { vertical-align: top; }
 	top:@row7Top+2;
 	left:235px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;
 }
 
 #Zp{
@@ -1078,6 +1124,7 @@ td { vertical-align: top; }
 	top:@row7Top+2;
 	left:350px;
 	font-size:@smallSymbolSize;
+._GeneralSymbolStyles;
 }
 
 #Rp{
@@ -1085,6 +1132,7 @@ td { vertical-align: top; }
 	top:@row8Top+2;
 	left:7px;
 	font-size:@largeSymbolSize;
+	._GeneralSymbolStyles;
 }
 
 #Xc{
@@ -1092,6 +1140,7 @@ td { vertical-align: top; }
 	top:@row9Top + 2;
 	left:122px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;
 }
 
 #Yc{
@@ -1099,6 +1148,7 @@ td { vertical-align: top; }
 	top:@row9Top + 2;
 	left:235px;
 	font-size:@smallSymbolSize;
+	._GeneralSymbolStyles;	
 }
 
 #calculateBTN{
@@ -1107,12 +1157,38 @@ td { vertical-align: top; }
 	left:345px;
 	height:14px;
 	padding:4px;
-	background-color:red;
+	background-color:#999999;
 	cursor:pointer;
 	width:90px;
 	text-align:center;
 	text-transform:uppercase;
 	color:white;
+	border-color:black;
+	border-width:1px;
+	border-style:solid;
+	font-weight:bold;
+	font-size:12px;
+	-moz-box-shadow: 4px 4px 8px #C9C9C9;
+ 	-webkit-box-shadow: 4px 4px 8px #C9C9C9;
+ 	box-shadow: 4px 4px 8px #C9C9C9;
+background: #adadad; /* Old browsers */
+background: -moz-linear-gradient(top, #adadad 0%, #cccccc 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#adadad), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #adadad 0%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #adadad 0%,#cccccc 100%); /* Opera11.10+ */
+background: -ms-linear-gradient(top, #adadad 0%,#cccccc 100%); /* IE10+ */
+background: linear-gradient(top, #adadad 0%,#cccccc 100%); /* W3C */
+text-shadow: 1px 1px 2px #333333;
+}
+
+#calculateBTN:hover{
+background: #adadad; /* Old browsers */
+background: -moz-linear-gradient(top, #adadad 0%, #494949 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#adadad), color-stop(100%,#494949)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #adadad 0%,#494949 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #adadad 0%,#494949 100%); /* Opera11.10+ */
+background: -ms-linear-gradient(top, #adadad 0%,#494949 100%); /* IE10+ */
+background: linear-gradient(top, #adadad 0%,#494949 100%); /* W3C */
 }
 
 #clearBTN{
@@ -1125,9 +1201,26 @@ td { vertical-align: top; }
 	width:90px;
 	text-align:center;
 	text-transform:uppercase;
-	color:blue;
+	color:#666666;
 	font-size:10px;
 	text-decoration:underline;
+
+}
+
+#clearBTN:hover{
+	text-decoration:none;
+
+}
+
+#shader1{
+    ._GeneralPositioning;	
+	width:109px;
+	height:210px;
+	background-color:#E1E2E3;
+	z-index:0;
+	top:400px;
+
+
 }
 
 //End form styles
@@ -1135,14 +1228,14 @@ td { vertical-align: top; }
 
 //Begin visualization styles
 
-@maskerHeight: 300px;
+@maskerHeight: 432px;
 @blueBuildingWidth:100px;
 @orangeBuildingWidth:@blueBuildingWidth;
-@maskerWidth: 450px;
-@blueBlgLeftOffset: 100px;
-@orangeBlgLeftOffset: 180px;
-@otaprofitCont:@blueBuildingWidth;
-@rotatedtextAmount:-15deg;
+@maskerWidth: 550px;
+@blueBlgLeftOffset: 115px;
+@orangeBlgLeftOffset: 281px;
+@otaprofitCont:110px;
+@rotatedtextAmount:0deg;
 @rotatedWidth:50px;
 @rotatedFontSize:11px;
 @rotatedTopOffest:10px;
@@ -1161,18 +1254,19 @@ td { vertical-align: top; }
     width:750px;
     height:700px;
     top:0px;
-    background-color:#d2691e;
+    /*background-color:#d2691e;*/
+    background-image:url("../img/v_bkg.png");
 }
 
 #buildingMasker{
 	height:@maskerHeight;
 	width:@maskerWidth;
 	position:absolute;
-	bottom:130px;
+	bottom:131px;
 	left:150px;
 	overflow:hidden;
 	border-bottom-style:solid;
-	border-bottom-width:1px;
+	border-bottom-width:0px;
 	border-bottom-color:black;
 
 }
@@ -1223,6 +1317,7 @@ td { vertical-align: top; }
 }
 
 #orangeContent{
+ 
 	position:absolute;
 	height:	@maskerHeight;
 	bottom:-150px; //Animate this to bring blue initially on
@@ -1300,6 +1395,7 @@ td { vertical-align: top; }
 	top:20px;
 	position:absolute;
 	left:@orangeBlgLeftOffset+@orangeBuildingWidth;
+	z-index:999;
 }
 
 #yourProfitLabel{
@@ -1342,7 +1438,25 @@ td { vertical-align: top; }
 	left:@orangeBlgLeftOffset+@orangeBuildingWidth;
 }
 
+#l_forground{
+	position:absolute;
+	bottom:0;
+	left:60px;
+	width:187px;
+	height:60px;
+	background:url("../img/l_forground.png");
+	z-index:999;
+}
 
+#r_forground{
+	position:absolute;
+	bottom:0;
+	left:280px;
+	width:102px;
+	height:44px;
+	background:url("../img/r_forground.png");
+	z-index:999;
+}
 
 
 

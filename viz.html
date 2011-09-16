@@ -35,7 +35,6 @@
 		   For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
 	<script src="js/libs/modernizr-2.0.6.min.js"></script>
 </head>
-
 <body>
 
 <bdo dir="ltr">
@@ -53,7 +52,6 @@
 					<form id="calcForm">
 						<select id="language">
 							<option value="English">English</option>
-							<option value="German">German</option>
 						</select>
 						<select id="symbol">
 							<option value="$">$</option>
@@ -161,10 +159,17 @@
 						
 						<div id="calculateBTN">Calculate</div>
 						<div id="clearBTN">Clear Form</div>
+
+						<!--Dividers and Shaders-->
+
+						<div class="dividerLine" id="dl1"></div>
+						<div class="shader" id="shader1"></div>
+
 					</form>
 				</div>
 				<div id="visualization">
 					<div id="buildingMasker">
+						<div id="r_forground"></div>
 						<div id="orangeContent">
 							<div id="rightBuildingBase"></div>
 							<div id="yourProfitAmountCont">
@@ -182,6 +187,7 @@
 								<div id="roomsNeededResult">138</div>
 							</div>
 						</div>
+						<div id="l_forground"></div>
 						<div id="blueContent">
 							<div id="curencyParticles"></div>
 							<div id="f_opaque">

@@ -59,6 +59,8 @@ function convertNumberFormat(sourceNumber, sourceLanguage, destinationLanguage) 
 
 function init(vo) {
 
+
+
 	log(vo);
 
 	$('#yourProfitCurSymbol').html($("#symbol").val());
@@ -81,8 +83,10 @@ function init(vo) {
 		}, 800);
 
 		$('#e_packageBase').stop().delay(800).animate({
-			bottom:"-" + getHeightFromPercent(vo.percentPackage, "Package only percentage bar") + "px"
-		}, 600);
+			bottom:"-" + (getHeightFromPercent(vo.percentPackage, "Package only percentage bar")) + "px"
+		}, 600, function(){
+//			log("Animated package only to -"+(getHeightFromPercent(vo.percentPackage, "Package only percentage bar")) + "px");
+		});
 
 		$('#f_opaque').stop().delay(1200).animate({
 			bottom:"-" + getHeightFromPercent(vo.percentOpaque, "Opaque only percentage bar") + "px"
@@ -125,14 +129,15 @@ function getHeightFromPercent(percent, logNote) {
 	var pixels = ((percent / 100) * total);
 	var result = total - pixels; //  //100% is 0 and 0% is the height of the element so we flip it
 
+
 	//Trap if more than 100% was passed.  If so, someone messed up!
 	if (result < 0) {
 		log("Critical Application Error: "+logNote+" percentage passed to visualization exceeds 100%.  Capping value for display but this is a programatic issue.");
 		result = 0;
 	}
-	if (result > 230) { //this number is the threshold for what is too small to show, decrease from height of mask
+	if (result > 319) { //this number is the threshold for what is too small to show, decrease from height of mask
 		log("Notice: "+logNote+" height too small to show.  Will animate to min allowed for display. Pixel count is only "+pixels);
-		return 230; // lower is visually higher
+		return 319; // lower is visually higher
 	} else {
 		return(result);
 	}
@@ -143,7 +148,7 @@ function remove() {
 	//Remove visualization
 
 	$('#blueContent, #orangeContent, #d_roomsBase, #e_packageBase, #f_opaque').stop().animate({
-		bottom:'-300px'
+		bottom:'-432px'
 	}, 1500);
 
 	$('#roomsNeededCont').stop().animate({
@@ -303,6 +308,8 @@ function populateFPO(){
 
 $(document).ready(function() {
 
+	populateFPO();
+	remove();
 
 	$('#calculateBTN').bind('click', function(e){
 		calculate();
