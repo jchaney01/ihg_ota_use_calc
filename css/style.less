@@ -336,15 +336,15 @@ td { vertical-align: top; }
 @highlightColor:#D64024;
 
 @labelOffsetFromField:29px;
-@row1Top: 90px;
-@row2Top: 140px;
-@row3Top: 210px;
-@row4Top: 295px;
-@row5Top: 330px;
-@row6Top: 365px;
-@row7Top: 410px;
-@row8Top: 475px;
-@row9Top: 550px;
+@row1Top: 110px;
+@row2Top: @row1Top+50;
+@row3Top: @row1Top+120;
+@row4Top: @row1Top+205;
+@row5Top: @row1Top+240;
+@row6Top: @row1Top+275;
+@row7Top: @row1Top+320;
+@row8Top: @row1Top+385;
+@row9Top: @row1Top+460;
 
 #formCont{
 	width:490px;
@@ -437,7 +437,7 @@ td { vertical-align: top; }
 
 #dl1{
 	._GeneralPositioning;
-	top:195px;
+	top:@row1Top+105;
 	height:2px;
 	width:455px;
 	background-color:black;
@@ -1218,7 +1218,7 @@ background: linear-gradient(top, #adadad 0%,#494949 100%); /* W3C */
 	height:210px;
 	background-color:#E1E2E3;
 	z-index:0;
-	top:400px;
+	top:@row1Top+310;
 
 
 }
