@@ -18,11 +18,11 @@ var formats = {
 		locale: "us"
 	},
 	English : {
-		format: "#,###.00",
+		format: "#,###",
 		locale: "us"
 	},
 	German : {
-		format: "#,###.00",
+		format: "#,###",
 		locale: "de"
 	}
 };
@@ -62,11 +62,11 @@ function init(vo) {
 	log(vo);
 
 	$('#yourProfitCurSymbol').html($("#symbol").val());
-	$('#roomsNeededResult').html(vo.roomsNeeded);
+	$('#roomsNeededResult').html(convertNumberFormat(vo.roomsNeeded, vo.language, $('#language').val()));
 
 	if (validateData(vo)) {
 
-		$("#yourProfitAmount").html(vo.yourProfit);
+		$("#yourProfitAmount").html(convertNumberFormat(vo.yourProfit, vo.language, $('#language').val()));
 
 		$('#blueContent').stop().animate({
 			bottom:'0'
@@ -107,8 +107,17 @@ function init(vo) {
 	}
 }
 
-function truncateUniversalNum(i){ //Truncates to two decimals
-	return Math.round(i*100)/100
+function truncateUniversalNum(i,n){ //Truncates to n decimals
+
+	switch (n){
+		case 2:
+			return Math.round(i*100)/100;
+			break;
+		case 1:
+			return Math.round(i*10)/10;
+	}
+
+
 }
 
 function getHeightFromPercent(percent, logNote) {
@@ -204,12 +213,12 @@ function calculate(){
 			T_package			: "Package",
 			T_opaque			: "Opaque"
 		},
-		OTAProfitAmount: truncateUniversalNum((Z*0.01)*T),
+		OTAProfitAmount: truncateUniversalNum((Z*0.01)*T,1),
 		percentPackage: ((((M*0.01)*L)/((Z*0.01)*T))*100)+((((Q*0.01)*P)/((Z*0.01)*T))*100),
 //		percentRooms: ((H*(J*0.01)) / ((Z*0.01)*T))*100,
 		percentRooms: 100,
 		percentOpaque: (((Q*0.01)*P)/((Z*0.01)*T))*100,
-		yourProfit: truncateUniversalNum(X-Y),
+		yourProfit: truncateUniversalNum(X-Y,2),
 		rightBldgPercent: ((X-Y)*100)/((Z*0.01)*T),
 		roomsNeeded: (X-Y)/(D-F),
 		otaRoomContPercentage: S/E,
