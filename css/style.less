@@ -1231,18 +1231,18 @@ background: linear-gradient(top, #adadad 0%,#494949 100%); /* W3C */
 @maskerHeight: 432px;
 @blueBuildingWidth:100px;
 @orangeBuildingWidth:@blueBuildingWidth;
-@maskerWidth: 550px;
+@maskerWidth: 610px;
 @blueBlgLeftOffset: 115px;
 @orangeBlgLeftOffset: 281px;
-@otaprofitCont:110px;
+@otaprofitCont:163px;
 @rotatedtextAmount:0deg;
-@rotatedWidth:50px;
-@rotatedFontSize:11px;
-@rotatedTopOffest:10px;
+@rotatedWidth:80px;
+@rotatedFontSize:13px;
+@rotatedTopOffest:4px;
 @yourProfitAmountContWidth:@otaprofitCont;
 @buildingLabelPaddingAmount:4px;
 @buildingDollarFontSize:22px;
-@roomsNeededContWidth:65px;
+@roomsNeededContWidth:110px;
 
 #devPusher{
 	margin-bottom:800px;
@@ -1273,7 +1273,7 @@ background: linear-gradient(top, #adadad 0%,#494949 100%); /* W3C */
 
 #leftBuildingBase{
 	height:@maskerHeight; 
-	background-color:blue;
+	background-image:url("../img/l_bldg.png");
 	width:@blueBuildingWidth;
 	position:absolute;
 	bottom:0px;
@@ -1283,7 +1283,7 @@ background: linear-gradient(top, #adadad 0%,#494949 100%); /* W3C */
 
 #rightBuildingBase{
 	height:@maskerHeight;
-	background-color:#cc9900;
+	background-image:url("../img/r_bldg.png");
 	width:@orangeBuildingWidth;
 	position:absolute;
 	bottom:0;
@@ -1294,21 +1294,31 @@ background: linear-gradient(top, #adadad 0%,#494949 100%); /* W3C */
 #otaProfitAmountCont{
 	position:absolute;
 	left:0;
-	top:20px;
+	top:5px;
 	width:@otaprofitCont;
 }
 
 #otaProfitLabel{
 	width:100%;
-	background-color:red;
-	padding:@buildingLabelPaddingAmount;
+	height:26px;
+	background-image:url("../img/l_banner.png");
+	padding-left:20px;
+	padding-top:6px;
+	color:white;
+	font-weight:bold;
+	background-repeat:no-repeat;
 }
 
 #otaProfitAmount{
 	text-align:right;
-	padding-right:8px;
+	padding-right:54px;
 	font-size:@buildingDollarFontSize;
+	color:#0C5F23;
+font-family:serif;
 }
+
+.percent { font-size: .70em ;vertical-align: super}
+
 
 #blueContent{
 	position:absolute;
@@ -1325,69 +1335,75 @@ background: linear-gradient(top, #adadad 0%,#494949 100%); /* W3C */
 }
 
 #d_roomsBase{
-	width:@blueBuildingWidth;
+	width:@blueBuildingWidth - 14;
 	height:	@maskerHeight;
-	background-color:red;
+	background-color:#0C5F23;
 	z-index:2;
 	position:absolute;
 	bottom:-50px;
-	left:@blueBlgLeftOffset;
 	opacity:1;
+	left:@blueBlgLeftOffset + 14;
 }
 
 #e_packageBase{
-	width:@blueBuildingWidth;
+	width:@blueBuildingWidth - 14;
 	height:	@maskerHeight;
-	background-color:green;
+	background-color:#7EBF30;
 	z-index:3;
 	position:absolute;
 	bottom:-70px;
-	left:@blueBlgLeftOffset;
+	left:@blueBlgLeftOffset + 14;
 	opacity:1;
+	border-top:solid;
+	border-color:white;
+	border-width:3px;
 }
 
 #f_opaque{
-	width:@blueBuildingWidth;
+	width:@blueBuildingWidth - 14;
 	height:	@maskerHeight;
-	background-color:orange;
+	background-color:#0D6866;
 	z-index:4;
 	position:absolute;
 	bottom:-100px;
-	left:@blueBlgLeftOffset;
+	left:@blueBlgLeftOffset + 14;
 	opacity:1;
+	border-top:solid;
+	border-color:white;
+	border-width:3px;
 }
 
 #roomsOnlyCopy{
 	-webkit-transform: rotate(@rotatedtextAmount);
 	position:absolute;
 	top:@rotatedTopOffest;
-	right:0;
+	left:4px;
 	width:@rotatedWidth;
 	color:white;
 	font-size:@rotatedFontSize;
-	text-align:center;
+	text-align:left;
 }
 
 #packageCopy{
 	-webkit-transform: rotate(@rotatedtextAmount);
 	position:absolute;
 	top:@rotatedTopOffest;
-	right:0;
+	left:4px;
 	width:@rotatedWidth;
 	color:white;
 	font-size:@rotatedFontSize;
-	text-align:center;
+	text-align:left;
 }
 
 #opaqueCopy{
 	-webkit-transform: rotate(@rotatedtextAmount);
 	position:absolute;
 	top:@rotatedTopOffest;
-	right:0;
+	left:4px;
 	width:@rotatedWidth;
 	color:white;
 	font-size:@rotatedFontSize;
-	text-align:center;
+	text-align:left;
 }
 
 #yourProfitAmountCont{
@@ -1399,40 +1415,124 @@ background: linear-gradient(top, #adadad 0%,#494949 100%); /* W3C */
 }
 
 #yourProfitLabel{
-	background-color:red;
+	background:url("../img/r_banner.png");
 	width:100%;
+	width:130px;
+	height:26px;
 }
 
 #yourProfitLabelText{
 	text-align:right;
-	padding:@buildingLabelPaddingAmount;
+	padding-top:5px;
+	padding-right:17px;
+	color:white;
+	font-weight:bold;
+	font-family:serif;
 }
 #yourProfitAmountDollarCont{
-	text-align:right;
+	text-align:left;
+	padding-left:5px;
+	color:#16ACA5;
 	font-size:@buildingDollarFontSize;
+	font-family:serif;
 }
 
 #roomsNeededCont{
 	width:@roomsNeededContWidth;
 	position:absolute;
 	left:@maskerWidth - @roomsNeededContWidth;
-	bottom:0px;
+	bottom:10px;
+	background-color:#D7491D;
+	padding:5px;
 }
+
+#T_ota_total_cont{
+	text-transform:uppercase;
+	color:white;
+	font-weight:bold;
+	position:absolute;
+	top:150px;
+	left:380px;
+	font-size:12px;
+	width:160px;
+}
+
+#T_ota_inc_rm_cont{
+	text-transform:uppercase;
+	color:#032728;
+	font-weight:bold;
+	position:absolute;
+	top:80px;
+	left:510px;
+	font-size:12px;
+	width:150px;
+
+}
+
+#otaRoomContPercentage{
+	text-transform:uppercase;
+	color:white;
+	font-weight:normal;
+	position:absolute;
+	top:175px;
+	left:380px;
+	font-size:49px;
+	width:160px;
+	font-family:serif;
+}
+
+#otaIncreRoomContPercent{
+	text-transform:uppercase;
+	color:#032728;
+	font-weight:normal;
+	position:absolute;
+	top:22px;
+	left:510px;
+	font-size:49px;
+	width:160px;
+	font-family:serif;
+
+}
+
+
 
 #roomsNeededCopy{
 	width:57px;
 	font-size:9px;
 	text-transform:uppercase;
+	color:white;
 }
 
 #roomsNeededResult{
 	font-size:40px;
 }
 
+#heart{
+	position:absolute;
+	left:483px;
+	top:300px;
+	background-image:url("../img/heart.png");
+	height:116px;
+	width:11px;
+	opacity:1;
+}
+
+#subText{
+	position:absolute;
+	top:600px;
+	text-align:left;
+	left:430px;
+	font-weight:bold;
+	color:@highlightColor;
+	font-size:15px;
+	width:500px;
+	opacity:0;
+}
+
 #miniBuildings{
 	height:@maskerHeight;
 	width:@orangeBuildingWidth;
-	background-color:#006400;
+	background-image:url("../img/minis.png");
 	position:absolute;
 	top:71px;
 	left:@orangeBlgLeftOffset+@orangeBuildingWidth;

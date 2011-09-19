@@ -65,6 +65,7 @@ function init(vo) {
 
 	$('#yourProfitCurSymbol').html($("#symbol").val());
 	$('#roomsNeededResult').html(convertNumberFormat(vo.roomsNeeded, vo.language, $('#language').val()));
+	$('#subText').html(vo.copy.V_T_p1a+"<br/>"+vo.copy.V_T_p1b);
 
 	if (validateData(vo)) {
 
@@ -74,12 +75,21 @@ function init(vo) {
 			bottom:'0'
 		}, 1000);
 
+		$('#heart').stop().delay(2000).animate({
+			opacity:'1'
+		}, 600);
+
+		$('#subText').stop().delay(2000).animate({
+			"opacity":1,
+			"left":"130px"
+		}, 1000);
+
 		$('#orangeContent').stop().delay(1500).animate({
 			bottom:"-" + getHeightFromPercent(vo.rightBldgPercent, "Orange section") + "px"
 		}, 1000);
 
 		$('#d_roomsBase').stop().delay(300).animate({
-			bottom:"-" + getHeightFromPercent(vo.percentRooms, "Rooms only percentage bar") + "px"
+			bottom:"-" + (getHeightFromPercent(vo.percentRooms, "Rooms only percentage bar") + 37) + "px" //The 37 is the height offset to account for the building peak
 		}, 800);
 
 		$('#e_packageBase').stop().delay(800).animate({
@@ -151,7 +161,7 @@ function remove() {
 		bottom:'-432px'
 	}, 1500);
 
-	$('#roomsNeededCont').stop().animate({
+	$('#roomsNeededCont, #heart').stop().animate({
 		opacity:0
 	}, 1500);
 
@@ -206,10 +216,8 @@ function calculate(){
 		copy: {
 			V_L_ota_profit		: "OTA PROFIT",
 			V_T_concerns		: "CONCERNS",
-			V_T_p1a				: "Do these numbers look good to you?",
-			V_T_p1b				: "Are you willing to live with this flow through rate?",
-			V_T_p2a				: "What can you do differently?",
-			V_T_p2b				: "Will you hit your targets given these profit numbers?",
+			V_T_p1a				: "THINK ABOUT WHOSE BUSINESS YOU'RE BUILDING...",
+			V_T_p1b				: "How can you rebalance your business reliance on OTAs and improve your profitability?",
 			T_ota_total_cont	: "OTA TOTAL ROOM CONTRIBUTION",
 			T_ota_inc_rm_cont	: "OTA INCREMENTAL ROOM CONTRIBUTION",
 			L_your_profit		: "YOUR PROFIT",
