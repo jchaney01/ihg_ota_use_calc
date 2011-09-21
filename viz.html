@@ -1,3 +1,5 @@
+<!--Created by Jason Chaney, unless it doesn't work in which case I have no idea who made this ;-)-->
+
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]>
@@ -38,216 +40,223 @@
 <body>
 
 <bdo dir="ltr">
-	<div id="container">
-		<header>
-		</header>
-		<div id="main" role="main">
-			<div id="masterContainer">
-				<div id="formCont">
-					<div id="mainTitle">Calculate Your OTA Dependency</div>
-					<div id="mainParagraph">OTA bookings seem like an easy way to make profit, but you're only padding
-						the pockets of the OTA business. It dosen't take much work to replace the profits &mdash; use
-						this tool to find out how easy it is. Enter data in terms of one fiscial year.
-					</div>
-					<form id="calcForm">
-						<select id="language">
-							<option value="English">English</option>
-						</select>
-						<select id="symbol">
-							<option value="$">$</option>
-							<option value="&euro;">&euro;</option>
-							<option value="&pound;">&pound;</option>
-							<option value="&yen;">&yen;</option>
-						</select>
-
-						<!--User data-->
-
-						<input id="hotelName" type="text"/>
-						<input id="A"/>
-						<input id="B"/>
-						<input id="C"/>
-						<input id="D"/>
-						<input id="E"/>
-						<input id="F"/>
-						<input id="G"/>
-						<input id="H"/>
-						<input id="J"/>
-						<input id="K"/>
-						<input id="L"/>
-						<input id="M"/>
-						<input id="N"/>
-						<input id="P"/>
-						<input id="Q"/>
-						<input id="R"/>
-
-						<!--Calculated data-->
-
-						<div id="CE"></div>
-						<div id="HG"></div>
-						<div id="U"></div>
-						<div id="LK"></div>
-						<div id="V"></div>
-						<div id="PN"></div>
-						<div id="W"></div>
-						<div id="S"></div>
-						<div id="T"></div>
-						<div id="TS"></div>
-						<div id="Z"></div>
-						<div id="b_"></div>
-						<div id="X"></div>
-						<div id="Y"></div>
-
-						<!--Percent symbols-->
-
-						<div id="Bp">%</div>
-						<div id="Jp">%</div>
-						<div id="Up">%</div>
-						<div id="Mp">%</div>
-						<div id="Vp">%</div>
-						<div id="Qp">%</div>
-						<div id="Wp">%</div>
-						<div id="Zp">%</div>
-						<div id="Rp">%</div>
-
-						<!--Currency Symbols-->
-
-						<div class="currency" id="Cc">$</div>
-						<div class="currency" id="Dc">$</div>
-						<div class="currency" id="CEc">$</div>
-						<div class="currency" id="Fc">$</div>
-						<div class="currency" id="Hc">$</div>
-						<div class="currency" id="HGc">$</div>
-						<div class="currency" id="Lc">$</div>
-						<div class="currency" id="LKc">$</div>
-						<div class="currency" id="Pc">$</div>
-						<div class="currency" id="PNc">$</div>
-						<div class="currency" id="Tc">$</div>
-						<div class="currency" id="TSc">$</div>
-						<div class="currency" id="Xc">$</div>
-						<div class="currency" id="Yc">$</div>
-
-						<!--Labels-->
-
-						<div id="L_hotelName">hotel name</div>
-						<div id="L_A">no. rooms</div>
-						<div id="L_B">occupancy</div>
-						<div id="L_C">revenue</div>
-						<div id="L_D">transient adr</div>
-						<div id="L_CE">adr</div>
-						<div id="L_E">total rooms sold</div>
-						<div id="L_F">variable room cost</div>
-						<div id="L_ota_rooms">ota rooms</div>
-						<div id="L_ota_rooms_only">rooms only</div>
-						<div id="L_no_sold">no. sold</div>
-						<div id="L_revenue">revenue</div>
-						<div id="L_adr">adr</div>
-						<div id="L_comm">commission</div>
-						<div id="L_comm_std">standard</div>
-						<div id="L_weighted">weighted</div>
-						<div id="L_package">package</div>
-						<div id="L_opaque">opaque</div>
-						<div id="L_S">total ota rooms sold</div>
-						<div id="L_T">total ota revenue</div>
-						<div id="L_TS">ota adr</div>
-						<div id="L_Z">avg ota commission</div>
-						<div id="L_R">recommended incrementaly</div>
-						<div id="L_b_">ota incremental rooms</div>
-						<div id="L_X">incremental ota revenue</div>
-						<div id="L_Y">cost of servicing ota rooms</div>
-
-						<!--Buttons-->
-						
-						<div id="calculateBTN">Calculate</div>
-						<div id="clearBTN">Clear Form</div>
-
-						<!--Dividers and Shaders-->
-
-						<div class="dividerLine" id="dl1"></div>
-						<div class="shader" id="shader1"></div>
-
-					</form>
+<div id="container">
+	<header>
+	</header>
+	<div id="main" role="main">
+		<div id="masterContainer">
+			<div id="formCont">
+				<div id="mainTitle">Calculate Your OTA Dependency</div>
+				<div id="mainParagraph">OTA bookings seem like an easy way to make profit, but you're only padding
+					the pockets of the OTA business. It dosen't take much work to replace the profits &mdash; use
+					this tool to find out how easy it is. Enter data in terms of one fiscal year.
 				</div>
-				<div id="visualization">
+				<form id="calcForm">
+					<select id="language">
+						<option value="English">English</option>
+					</select>
+					<select id="symbol">
+						<option value="$">$</option>
+						<option value="&euro;">&euro;</option>
+						<option value="&pound;">&pound;</option>
+						<option value="&yen;">&yen;</option>
+					</select>
+
+					<!--User data-->
+
+					<input id="hotelName" type="text"/>
+					<input id="A"/>
+					<input id="B"/>
+					<input id="C"/>
+					<input id="D"/>
+					<input id="E"/>
+					<input id="F"/>
+					<input id="G"/>
+					<input id="H"/>
+					<input id="J"/>
+					<input id="K"/>
+					<input id="L"/>
+					<input id="M"/>
+					<input id="N"/>
+					<input id="P"/>
+					<input id="Q"/>
+					<input id="R"/>
+
+					<!--Calculated data-->
+
+					<div id="CE"></div>
+					<div id="HG"></div>
+					<div id="U"></div>
+					<div id="LK"></div>
+					<div id="V"></div>
+					<div id="PN"></div>
+					<div id="W"></div>
+					<div id="S"></div>
+					<div id="T"></div>
+					<div id="TS"></div>
+					<div id="Z"></div>
+					<div id="b_"></div>
+					<div id="X"></div>
+					<div id="Y"></div>
+
+					<!--Percent symbols-->
+
+					<div id="Bp">%</div>
+					<div id="Jp">%</div>
+					<div id="Up">%</div>
+					<div id="Mp">%</div>
+					<div id="Vp">%</div>
+					<div id="Qp">%</div>
+					<div id="Wp">%</div>
+					<div id="Zp">%</div>
+					<div id="Rp">%</div>
+
+					<!--Currency Symbols-->
+
+					<div class="currency" id="Cc">$</div>
+					<div class="currency" id="Dc">$</div>
+					<div class="currency" id="CEc">$</div>
+					<div class="currency" id="Fc">$</div>
+					<div class="currency" id="Hc">$</div>
+					<div class="currency" id="HGc">$</div>
+					<div class="currency" id="Lc">$</div>
+					<div class="currency" id="LKc">$</div>
+					<div class="currency" id="Pc">$</div>
+					<div class="currency" id="PNc">$</div>
+					<div class="currency" id="Tc">$</div>
+					<div class="currency" id="TSc">$</div>
+					<div class="currency" id="Xc">$</div>
+					<div class="currency" id="Yc">$</div>
+
+					<!--Labels-->
+
+					<div id="L_hotelName">hotel name</div>
+					<div id="L_A">no. rooms</div>
+					<div id="L_B">occupancy</div>
+					<div id="L_C">revenue</div>
+					<div id="L_D">transient adr</div>
+					<div id="L_CE">adr</div>
+					<div id="L_E">total rooms sold</div>
+					<div id="L_F">variable room cost</div>
+					<div id="L_ota_rooms">ota rooms</div>
+					<div id="L_ota_rooms_only">rooms only</div>
+					<div id="L_no_sold">no. sold</div>
+					<div id="L_revenue">revenue</div>
+					<div id="L_adr">adr</div>
+					<div id="L_comm">commission</div>
+					<div id="L_comm_std">standard</div>
+					<div id="L_weighted">weighted</div>
+					<div id="L_package">package</div>
+					<div id="L_opaque">opaque</div>
+					<div id="L_S">total ota rooms sold</div>
+					<div id="L_T">total ota revenue</div>
+					<div id="L_TS">ota adr</div>
+					<div id="L_Z">avg ota commission</div>
+					<div id="L_R">recommended incrementaly</div>
+					<div id="L_b_">ota incremental rooms</div>
+					<div id="L_X">incremental ota revenue</div>
+					<div id="L_Y">cost of servicing ota rooms</div>
+
+					<!--Buttons-->
+
+					<div id="calculateBTN">Calculate</div>
+					<div id="clearBTN">Clear Form</div>
+
+					<!--Dividers and Shaders-->
+
+					<div class="dividerLine" id="dl1"></div>
+					<div class="shader" id="shader1"></div>
+
+				</form>
+			</div>
+			<div id="visualization">
+
+				<div id="clouds">
 					<div id="T_ota_total_cont">OTA Total Room Contribution</div>
-						<div id="T_ota_inc_rm_cont">OTA INCREMENTAL ROOM CONTRIBUTION</div>
-						<div id="otaRoomContPercentage">55<span class="percent">%</span></div>
-						<div id="otaIncreRoomContPercent">55<span class="percent">%</span></div>
-					<div id="buildingMasker">
-						<div id="r_forground"></div>
-						<div id="orangeContent">
-							<div id="rightBuildingBase"></div>
-							<div id="yourProfitAmountCont">
-								<div id="yourProfitLabel">
-									<div id="yourProfitLabelText">Your Profit</div>
-								</div>
-								<div id="yourProfitAmountDollarCont">
-									<span class="currency" id="yourProfitCurSymbol"></span><span id="yourProfitAmount">00,610</span>
-								</div>
-							</div>
-							<div id="miniBuildings"></div>
-						</div>
-						<div id="roomsNeededCont">
-							<div id="roomsNeededCopy">Rooms needed on direct channels to replace profits
-								<div id="roomsNeededResult">138</div>
-							</div>
-						</div>
-						<div id="l_forground"></div>
-						<div id="blueContent">
-							<div id="curencyParticles"></div>
-							<div id="f_opaque">
-								<div id="opaqueCopy">Opaque</div>
-							</div>
-							<div id="e_packageBase">
-								<div id="packageCopy">Package</div>
-							</div>
-							<div id="d_roomsBase">
-								<div id="roomsOnlyCopy">Rooms Only</div>
-							</div>
-							<div id="leftBuildingBase"></div>
-							<div id="otaProfitAmountCont">
-								<div id="otaProfitLabel">OTA Profit</div>
-								<div id="otaProfitAmount"><span
-										id="otaProfitAmountISO">48,187</span></div>
-							</div>
-						</div>
-						<div id="heart"></div>
-					</div>
-					<div id="subText"></div>
+					<div id="T_ota_inc_rm_cont">OTA INCREMENTAL ROOM CONTRIBUTION</div>
+					<div id="otaRoomContPercentage">0<span class="percent">%</span></div>
+					<div id="otaIncreRoomContPercent">0<span class="percent">%</span></div>
 				</div>
+
+
+				<div id="buildingMasker">
+					<div id="r_forground"></div>
+					<div id="orangeContent">
+						<div id="rightBuildingBase"></div>
+						<div id="yourProfitAmountCont">
+							<div id="yourProfitLabel">
+								<div id="yourProfitLabelText">Your Profit</div>
+							</div>
+							<div id="yourProfitAmountDollarCont">
+								<span class="currency" id="yourProfitCurSymbol"></span><span id="yourProfitAmount">00,610</span>
+							</div>
+						</div>
+						<div id="miniBuildings"></div>
+					</div>
+					<div id="roomsNeededCont">
+						<div id="roomsNeededCopy">Rooms needed on direct channels to replace profits
+							<div id="roomsNeededResult">138</div>
+						</div>
+					</div>
+					<div id="l_forground"></div>
+					<div id="blueContent">
+						<div id="curencyParticles"></div>
+						<div id="f_opaque">
+							<div id="opaqueCopy">Opaque</div>
+						</div>
+						<div id="e_packageBase">
+							<div id="packageCopy">Package</div>
+						</div>
+						<div id="d_roomsBase">
+							<div id="roomsOnlyCopy">Rooms Only</div>
+						</div>
+						<div id="leftBuildingBase"></div>
+						<div id="otaProfitAmountCont">
+							<div id="otaProfitLabel">OTA Profit</div>
+							<div id="otaProfitAmount"><span
+									id="otaProfitAmountISO">48,187</span></div>
+						</div>
+					</div>
+					<div id="heart"></div>
+				</div>
+				<div id="subText"></div>
 			</div>
 		</div>
-		<footer>
-		</footer>
 	</div>
-	<!--! end of #container -->
+	<footer>
+	</footer>
+</div>
+<!--! end of #container -->
 
 
-	<!-- JavaScript at the bottom for fast page loading -->
+<!-- JavaScript at the bottom for fast page loading -->
 
-	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
-	<script src="js/libs/jshashtable-2.1.js"></script>
-	<script src="js/libs/jquery.numberformatter-1.2.2.js"></script>
-
-
-	<!-- scripts concatenated and minified via ant build script-->
-	<script defer src="js/plugins.js"></script>
-	<script defer src="js/script.js"></script>
-	<!-- end scripts-->
+<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+<script src="js/libs/jshashtable-2.1.js"></script>
+<script src="js/libs/jquery.numberformatter-1.2.2.js"></script>
 
 
-	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+<!-- scripts concatenated and minified via ant build script-->
+<script defer src="js/underscore-min.js"></script>
+<script defer src="js/plugins.js"></script>
+<script defer src="js/script.js"></script>
+<!-- end scripts-->
+
+
+<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
 		   chromium.org/developers/how-tos/chrome-frame-getting-started -->
-	<!--[if lt IE 7 ]>
-	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-	<script>window.attachEvent('onload', function() {
-		CFInstall.check({mode:'overlay'})
-	})</script>
-	<![endif]-->
+<!--[if lt IE 7 ]>
+<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+<script>window.attachEvent('onload', function() {
+	CFInstall.check({mode:'overlay'})
+})</script>
+<![endif]-->
 </bdo>
+
 <div id="devControls">
-				<a id="animateIn" href="#">Pre-populate with client Excel data</a>
-			</div>
+	<!--<a id="animateIn" href="#">Pre-populate with client Excel data</a>-->
+</div>
 </body>
 </html>

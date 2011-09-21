@@ -70,7 +70,7 @@ td{vertical-align:top;}
 #calcForm{margin-top:10px;}
 #language{position:absolute;margin:0;padding:0;z-index:999;width:100px;top:110px;}
 #symbol{position:absolute;margin:0;padding:0;z-index:999;width:40px;left:110px;top:110px;}
-#hotelName{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;width:180px;left:170px;top:110px;}
+#hotelName{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;width:180px;left:170px;top:110px;text-align:left;}
 #dl1{position:absolute;margin:0;padding:0;z-index:999;top:215px;height:2px;width:455px;background-color:black;}
 #A{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;width:70px;left:370px;top:110px;}
 #B{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;width:50px;left:0;top:160px;height:17px;}
@@ -85,8 +85,8 @@ td{vertical-align:top;}
 #L_CE{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:100px;left:358px;top:189px;font-size:10px;}
 #L_E{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:200px;left:0;top:267px;font-size:10px;}
 #L_F{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:200px;left:150px;top:267px;font-size:10px;}
-#E{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;left:0;top:230px;width:120px;height:25px;}
-#F{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;left:150px;top:230px;width:120px;height:25px;}
+#E{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;left:0;top:230px;width:120px;height:25px;font-size:20px;}
+#F{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;left:150px;top:230px;width:120px;height:25px;font-size:20px;}
 #L_ota_rooms{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:200px;left:0;top:294px;font-size:10px;color:#666666;}
 #L_no_sold{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:200px;left:100px;top:294px;font-size:10px;}
 #L_revenue{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:200px;left:160px;top:294px;font-size:10px;}
@@ -119,7 +119,7 @@ td{vertical-align:top;}
 #L_ota_rooms_only{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:100px;left:0;top:318px;font-size:15px;color:#666666;text-transform:capitalize;font-weight:normal;}
 #L_package{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:50px;left:0;top:353px;font-size:15px;color:#666666;text-transform:capitalize;font-weight:normal;}
 #L_opaque{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:10px;left:0;top:388px;font-size:15px;color:#666666;text-transform:capitalize;font-weight:normal;}
-#R{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;left:0;top:495px;width:100px;height:25px;}
+#R{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;left:0;top:495px;width:100px;height:25px;font-size:20px;}
 #L_S{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:75px;left:0;top:459px;font-size:10px;}
 #L_T{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:90px;left:115px;top:459px;font-size:10px;}
 #L_TS{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:90px;left:230px;top:459px;font-size:10px;color:#666666;}
@@ -165,11 +165,11 @@ td{vertical-align:top;}
 #otaProfitLabel{width:100%;height:26px;background-image:url("../img/l_banner.png");padding-left:20px;padding-top:6px;color:white;font-weight:bold;background-repeat:no-repeat;}
 #otaProfitAmount{text-align:right;padding-right:54px;font-size:22px;color:#0C5F23;font-family:serif;}
 .percent{font-size:.70em ;vertical-align:super;}
-#blueContent{position:absolute;height:432px;bottom:0px;}
-#orangeContent{position:absolute;height:432px;bottom:-150px;}
-#d_roomsBase{width:86px;height:432px;background-color:#0C5F23;z-index:2;position:absolute;bottom:-50px;opacity:1;left:129px;}
-#e_packageBase{width:86px;height:432px;background-color:#7EBF30;z-index:3;position:absolute;bottom:-70px;left:129px;opacity:1;border-top:solid;border-color:white;border-width:3px;}
-#f_opaque{width:86px;height:432px;background-color:#0D6866;z-index:4;position:absolute;bottom:-100px;left:129px;opacity:1;border-top:solid;border-color:white;border-width:3px;}
+#blueContent{position:absolute;height:432px;bottom:-432px;}
+#orangeContent{position:absolute;height:432px;bottom:-432px;}
+#d_roomsBase{width:86px;height:432px;background-color:#0C5F23;z-index:2;position:absolute;bottom:-432px;opacity:1;left:129px;}
+#e_packageBase{width:86px;height:432px;background-color:#7EBF30;z-index:3;position:absolute;bottom:-432px;left:129px;opacity:1;border-top:solid;border-color:white;border-width:3px;}
+#f_opaque{width:86px;height:432px;background-color:#0D6866;z-index:4;position:absolute;bottom:-432px;left:129px;opacity:1;border-top:solid;border-color:white;border-width:3px;}
 #roomsOnlyCopy{-webkit-transform:rotate(0deg);position:absolute;top:4px;left:4px;width:80px;color:white;font-size:13px;text-align:left;}
 #packageCopy{-webkit-transform:rotate(0deg);position:absolute;top:4px;left:4px;width:80px;color:white;font-size:13px;text-align:left;}
 #opaqueCopy{-webkit-transform:rotate(0deg);position:absolute;top:4px;left:4px;width:80px;color:white;font-size:13px;text-align:left;}
@@ -177,15 +177,16 @@ td{vertical-align:top;}
 #yourProfitLabel{background:url("../img/r_banner.png");width:100%;width:130px;height:26px;}
 #yourProfitLabelText{text-align:right;padding-top:5px;padding-right:17px;color:white;font-weight:bold;font-family:serif;}
 #yourProfitAmountDollarCont{text-align:left;padding-left:5px;color:#16ACA5;font-size:22px;font-family:serif;}
-#roomsNeededCont{width:110px;position:absolute;left:500px;bottom:10px;background-color:#D7491D;padding:5px;}
+#roomsNeededCont{width:110px;position:absolute;left:500px;bottom:10px;background-color:#D7491D;padding:5px;opacity:0;}
 #T_ota_total_cont{text-transform:uppercase;color:white;font-weight:bold;position:absolute;top:150px;left:380px;font-size:12px;width:160px;}
 #T_ota_inc_rm_cont{text-transform:uppercase;color:#032728;font-weight:bold;position:absolute;top:80px;left:510px;font-size:12px;width:150px;}
 #otaRoomContPercentage{text-transform:uppercase;color:white;font-weight:normal;position:absolute;top:175px;left:380px;font-size:49px;width:160px;font-family:serif;}
 #otaIncreRoomContPercent{text-transform:uppercase;color:#032728;font-weight:normal;position:absolute;top:22px;left:510px;font-size:49px;width:160px;font-family:serif;}
 #roomsNeededCopy{width:57px;font-size:9px;text-transform:uppercase;color:white;}
 #roomsNeededResult{font-size:40px;}
-#heart{position:absolute;left:483px;top:300px;background-image:url("../img/heart.png");height:116px;width:11px;opacity:1;}
-#subText{position:absolute;top:600px;text-align:left;left:430px;font-weight:bold;color:#d64024;font-size:15px;width:500px;opacity:0;}
+#heart{position:absolute;left:483px;top:300px;background-image:url("../img/heart.png");height:116px;width:11px;opacity:0;}
+#subText{position:absolute;top:600px;text-align:left;left:130px;font-weight:normal;color:#d64024;font-size:15px;width:500px;opacity:0;}
 #miniBuildings{height:432px;width:100px;background-image:url("../img/minis.png");position:absolute;top:71px;left:381px;}
 #l_forground{position:absolute;bottom:0;left:60px;width:187px;height:60px;background:url("../img/l_forground.png");z-index:999;}
 #r_forground{position:absolute;bottom:0;left:280px;width:102px;height:44px;background:url("../img/r_forground.png");z-index:999;}
+#clouds{opacity:0;}

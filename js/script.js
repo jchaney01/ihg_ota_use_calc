@@ -18,11 +18,11 @@ var formats = {
 		locale: "us"
 	},
 	English : {
-		format: "#,###",
+		format: "#,###.00",
 		locale: "us"
 	},
 	German : {
-		format: "#,###",
+		format: "#,###.00",
 		locale: "de"
 	}
 };
@@ -34,12 +34,12 @@ function validateData(vo) {
 	var foundErrors = false;
 	for (var i = 0; i < len; i++) {
 		var value = requirements[i];
-		if (vo[value] === undefined){
+		if (vo[value] === undefined) {
 			foundErrors = true;
-			log("Fatial trapped exception: "+value+" was not provided to init()");
+			log("Fatial trapped exception: " + value + " was not provided to init()");
 		}
 	}
-	if (foundErrors){
+	if (foundErrors) {
 		return 0;
 	} else {
 		return 1;
@@ -60,22 +60,42 @@ function convertNumberFormat(sourceNumber, sourceLanguage, destinationLanguage) 
 function init(vo) {
 
 
-
 	log(vo);
 
 	$('#yourProfitCurSymbol').html($("#symbol").val());
-	$('#roomsNeededResult').html(convertNumberFormat(vo.roomsNeeded, vo.language, $('#language').val()));
-	$('#subText').html(vo.copy.V_T_p1a+"<br/>"+vo.copy.V_T_p1b);
+	$('#roomsNeededResult').html(vo.roomsNeeded);
+	$('#subText').html(vo.copy.V_T_p1a + "<br/>" + vo.copy.V_T_p1b);
+	$('#otaIncreRoomContPercent').html(vo.otaIncreRoomContPercent + '<span class="percent">%</span>');
+	$('#otaRoomContPercentage').html(vo.otaRoomContPercentage + '<span class="percent">%</span>');
 
 	if (validateData(vo)) {
 
-		$("#yourProfitAmount").html(convertNumberFormat(vo.yourProfit, vo.language, $('#language').val()));
+//		$("#yourProfitAmount").html(convertNumberFormat(vo.yourProfit, vo.language, $('#language').val()));
+
+		_.delay(function() {
+			var from2 = {properity:0};
+			var to2 = {properity:vo.yourProfit};
+
+			$(from2).animate(to2, {
+				duration:1000,
+				step: function() {
+					$("#yourProfitAmount").html(convertNumberFormat(this.properity, vo.language, $('#language').val()));
+				},
+				complete:function() {
+					$("#yourProfitAmount").html(convertNumberFormat(to2.properity, vo.language, $('#language').val()));
+				}
+			});
+		}, 1500);
 
 		$('#blueContent').stop().animate({
 			bottom:'0'
 		}, 1000);
 
 		$('#heart').stop().delay(2000).animate({
+			opacity:'1'
+		}, 600);
+
+		$('#clouds').stop().delay(2000).animate({
 			opacity:'1'
 		}, 600);
 
@@ -94,7 +114,7 @@ function init(vo) {
 
 		$('#e_packageBase').stop().delay(800).animate({
 			bottom:"-" + (getHeightFromPercent(vo.percentPackage, "Package only percentage bar")) + "px"
-		}, 600, function(){
+		}, 600, function() {
 //			log("Animated package only to -"+(getHeightFromPercent(vo.percentPackage, "Package only percentage bar")) + "px");
 		});
 
@@ -112,23 +132,28 @@ function init(vo) {
 		$(from).animate(to, {
 			duration:1000,
 			step: function() {
-				$('#otaProfitAmount').html('<span class="currency" id="otaProfitCurSymbol">'+$("#symbol").val()+'</span>'+formatAmericanNumberToLanguage(this.properity, vo.language));
+				$('#otaProfitAmount').html('<span class="currency" id="otaProfitCurSymbol">' + $("#symbol").val() + '</span>' + formatAmericanNumberToLanguage(this.properity, vo.language));
 			},
 			complete:function() {
-				$('#otaProfitAmount').html('<span class="currency" id="otaProfitCurSymbol">'+$("#symbol").val()+'</span>'+formatAmericanNumberToLanguage(to.properity, vo.language));
+				$('#otaProfitAmount').html('<span class="currency" id="otaProfitCurSymbol">' + $("#symbol").val() + '</span>' + formatAmericanNumberToLanguage(to.properity, vo.language));
 			}
 		});
+
+
 	}
 }
 
-function truncateUniversalNum(i,n){ //Truncates to n decimals
+function truncateUniversalNum(i, n) { //Truncates to n decimals
 
-	switch (n){
+	switch (n) {
 		case 2:
-			return Math.round(i*100)/100;
+			return Math.round(i * 100) / 100;
 			break;
 		case 1:
-			return Math.round(i*10)/10;
+			return Math.round(i * 10) / 10;
+			break;
+		case 0:
+			return Math.round(i);
 	}
 
 
@@ -142,11 +167,11 @@ function getHeightFromPercent(percent, logNote) {
 
 	//Trap if more than 100% was passed.  If so, someone messed up!
 	if (result < 0) {
-		log("Critical Application Error: "+logNote+" percentage passed to visualization exceeds 100%.  Capping value for display but this is a programatic issue.");
+		log("Critical Application Error: " + logNote + " percentage passed to visualization exceeds 100%.  Capping value for display but this is a programatic issue.");
 		result = 0;
 	}
 	if (result > 319) { //this number is the threshold for what is too small to show, decrease from height of mask
-		log("Notice: "+logNote+" height too small to show.  Will animate to min allowed for display. Pixel count is only "+pixels);
+		log("Notice: " + logNote + " height too small to show.  Will animate to min allowed for display. Pixel count is only " + pixels);
 		return 319; // lower is visually higher
 	} else {
 		return(result);
@@ -161,16 +186,50 @@ function remove() {
 		bottom:'-432px'
 	}, 1500);
 
-	$('#roomsNeededCont, #heart').stop().animate({
+	$('#roomsNeededCont, #heart, #clouds').stop().animate({
 		opacity:0
 	}, 1500);
+
+
+	$('#A').val("");
+	$('#B').val("");
+	$('#C').val("");
+	$('#D').val("");
+	$('#E').val("");
+	$('#F').val("");
+	$('#G').val("");
+	$('#H').val("");
+	$('#J').val("");
+	$('#K').val("");
+	$('#L').val("");
+	$('#M').val("");
+	$('#N').val("");
+	$('#P').val("");
+	$('#Q').val("");
+	$('#R').val("");
+
+	$('#CE').html("");
+	$('#HG').html("");
+	$('#U').html("");
+	$('#LK').html("");
+	$('#V').html("");
+	$('#PN').html("");
+	$('#W').html("");
+	$('#S').html("");
+	$('#T').html("");
+	$('#TS').html("");
+	$('#Z').html("");
+	$('#b_').html("");
+	$('#X').html("");
+	$('#Y').html("");
+	
 
 
 	//Add code to clear fields
 
 }
 
-function calculate(){
+function calculate() {
 
 	//Note var namnes match /comps/formulas.png
 
@@ -193,21 +252,22 @@ function calculate(){
 	var R = convertNumberFormat($('#R').val(), $("#language").val(), "Universal");
 
 	//Next, generate the calculated values
-	var CE = C/E;
-	var HG = H/G;
-	var LK = L/K;
-	var PN = P/N;
-	var S = Number(G)+Number(K)+Number(N);
-	var W = (N/S)*Q;
-	var V = (K/S)*M;
+	var CE = C / E;
+	var HG = H / G;
+	var LK = L / K;
+	var PN = P / N;
+	var S = Number(G) + Number(K) + Number(N);
+	var W = (N / S) * Q;
+	var V = (K / S) * M;
 	var U = (Number(G) / Number(S)) * Number(J);
-	var T = Number(H)+Number(L)+Number(P);
-	var TS = T/S;
-	var Z = Number(U)+Number(V)+Number(W);
-	var b_ = (Number(G)+Number(K)+Number(N))*(R*0.01);
-	var X = (R*0.01)*T;
-	var Y = F*S;
-	
+	var T = Number(H) + Number(L) + Number(P);
+	var TS = T / S;
+	var Z = Number(U) + Number(V) + Number(W);
+	var b_ = (Number(G) + Number(K) + Number(N)) * (R * 0.01);
+	var X = (R * 0.01) * T;
+	var Y = F * S;
+
+
 	//Calculate the value object the visualization needs here. Copy still needs to be pulled from global JSON (which is created from the Excel language matrix)
 	//Also need to truncate these to two decimal points.
 
@@ -226,35 +286,35 @@ function calculate(){
 			T_package			: "Package",
 			T_opaque			: "Opaque"
 		},
-		OTAProfitAmount: truncateUniversalNum((Z*0.01)*T,1),
-		percentPackage: ((((M*0.01)*L)/((Z*0.01)*T))*100)+((((Q*0.01)*P)/((Z*0.01)*T))*100),
+		OTAProfitAmount: truncateUniversalNum((Z * 0.01) * T, 2),
+		percentPackage: ((((M * 0.01) * L) / ((Z * 0.01) * T)) * 100) + ((((Q * 0.01) * P) / ((Z * 0.01) * T)) * 100),
 //		percentRooms: ((H*(J*0.01)) / ((Z*0.01)*T))*100,
 		percentRooms: 100,
-		percentOpaque: (((Q*0.01)*P)/((Z*0.01)*T))*100,
-		yourProfit: truncateUniversalNum(X-Y,2),
-		rightBldgPercent: ((X-Y)*100)/((Z*0.01)*T),
-		roomsNeeded: (X-Y)/(D-F),
-		otaRoomContPercentage: S/E,
-		otaIncreRoomContPercent: b_/E
+		percentOpaque: (((Q * 0.01) * P) / ((Z * 0.01) * T)) * 100,
+		yourProfit: truncateUniversalNum(X - Y, 2),
+		rightBldgPercent: ((X - Y) * 100) / ((Z * 0.01) * T),
+		roomsNeeded: truncateUniversalNum((X - Y) / (D - F), 0),
+		otaRoomContPercentage: truncateUniversalNum(S / (E*0.01), 2),
+		otaIncreRoomContPercent: truncateUniversalNum(b_ / (E*0.01), 2)
 	}
 
 
 	//Finally, populate the fields with the correct formatting and launch visualizationz
 
-	$('#CE').html(  convertNumberFormat(CE, "English", $("#language").val()));
-	$('#HG').html(  convertNumberFormat(HG, "English", $("#language").val()));
-	$('#U').html(  convertNumberFormat(U, "English", $("#language").val()));
-	$('#LK').html(  convertNumberFormat(LK, "English", $("#language").val()));
-	$('#V').html(  convertNumberFormat(V, "English", $("#language").val()));
-	$('#PN').html(  convertNumberFormat(PN, "English", $("#language").val()));
-	$('#W').html(  convertNumberFormat(W, "English", $("#language").val()));
-	$('#S').html(  convertNumberFormat(S, "English", $("#language").val()));
-	$('#T').html(  convertNumberFormat(T, "English", $("#language").val()));
-	$('#TS').html(  convertNumberFormat(TS, "English", $("#language").val()));
-	$('#Z').html(  convertNumberFormat(Z, "English", $("#language").val()));
-	$('#b_').html(  convertNumberFormat(b_, "English", $("#language").val()));
-	$('#X').html(  convertNumberFormat(X, "English", $("#language").val()));
-	$('#Y').html(  convertNumberFormat(Y, "English", $("#language").val()));
+	$('#CE').html(convertNumberFormat(CE, "English", $("#language").val()));
+	$('#HG').html(convertNumberFormat(HG, "English", $("#language").val()));
+	$('#U').html(convertNumberFormat(U, "English", $("#language").val()));
+	$('#LK').html(convertNumberFormat(LK, "English", $("#language").val()));
+	$('#V').html(convertNumberFormat(V, "English", $("#language").val()));
+	$('#PN').html(convertNumberFormat(PN, "English", $("#language").val()));
+	$('#W').html(convertNumberFormat(W, "English", $("#language").val()));
+	$('#S').html(convertNumberFormat(S, "English", $("#language").val()));
+	$('#T').html(convertNumberFormat(T, "English", $("#language").val()));
+	$('#TS').html(convertNumberFormat(TS, "English", $("#language").val()));
+	$('#Z').html(convertNumberFormat(Z, "English", $("#language").val()));
+	$('#b_').html(convertNumberFormat(b_, "English", $("#language").val()));
+	$('#X').html(convertNumberFormat(X, "English", $("#language").val()));
+	$('#Y').html(convertNumberFormat(Y, "English", $("#language").val()));
 
 	//Send the visualization object to init
 
@@ -263,7 +323,7 @@ function calculate(){
 }
 
 //This is used for development to prepopulate the form with English FPO data
-function populateFPO(){
+function populateFPO() {
 	$("#language").val("English");
 	$("#symbol").val("$");
 	$(".currency").html("$");
@@ -287,43 +347,67 @@ function populateFPO(){
 
 //Sample object
 /*var sample = {
-	language: "English",
-	copy: {
-		V_L_ota_profit		: "OTA PROFIT",
-		V_T_concerns		: "CONCERNS",
-		V_T_p1a				: "Do these numbers look good to you?",
-		V_T_p1b				: "Are you willing to live with this flow through rate?",
-		V_T_p2a				: "What can you do differently?",
-		V_T_p2b				: "Will you hit your targets given these profit numbers?",
-		T_ota_total_cont	: "OTA TOTAL ROOM CONTRIBUTION",
-		T_ota_inc_rm_cont	: "OTA INCREMENTAL ROOM CONTRIBUTION",
-		L_your_profit		: "YOUR PROFIT",
-		T_rms_needed		: "ROOMS NEEDED ON DIRECT CHANNELS TO REPLACE PROFITS",
-		T_rooms_only		: "Rooms Only",
-		T_package			: "Package",
-		T_opaque			: "Opaque"
-	},
-	OTAProfitAmount: 48187,
-	percentPackage: 60,
-	percentRooms: 90,
-	percentOpaque: 40,
-	yourProfit: 34610,
-	rightBldgPercent: 50,
-	roomsNeeded: 388, //Included to keep all calculations in one place
-	otaRoomContPercentage: 6.8,
-	otaIncreRoomContPercent: 2.3
-};*/
+ language: "English",
+ copy: {
+ V_L_ota_profit		: "OTA PROFIT",
+ V_T_concerns		: "CONCERNS",
+ V_T_p1a				: "Do these numbers look good to you?",
+ V_T_p1b				: "Are you willing to live with this flow through rate?",
+ V_T_p2a				: "What can you do differently?",
+ V_T_p2b				: "Will you hit your targets given these profit numbers?",
+ T_ota_total_cont	: "OTA TOTAL ROOM CONTRIBUTION",
+ T_ota_inc_rm_cont	: "OTA INCREMENTAL ROOM CONTRIBUTION",
+ L_your_profit		: "YOUR PROFIT",
+ T_rms_needed		: "ROOMS NEEDED ON DIRECT CHANNELS TO REPLACE PROFITS",
+ T_rooms_only		: "Rooms Only",
+ T_package			: "Package",
+ T_opaque			: "Opaque"
+ },
+ OTAProfitAmount: 48187,
+ percentPackage: 60,
+ percentRooms: 90,
+ percentOpaque: 40,
+ yourProfit: 34610,
+ rightBldgPercent: 50,
+ roomsNeeded: 388, //Included to keep all calculations in one place
+ otaRoomContPercentage: 6.8,
+ otaIncreRoomContPercent: 2.3
+ };*/
+
+
+
+
+
+var allowedInputCharacterKeyCodes = Array(48,49,50,51,52,53,54,55,56,57,96,97,98,99,100,101,102,103,104,105,100,186,222,188,190);
 
 $(document).ready(function() {
 
-	populateFPO();
-	remove();
+	//Limits the types of characters to be accepted.
 
-	$('#calculateBTN').bind('click', function(e){
+	$("input[id != hotelName]").keydown(function(event) {
+        // Allow only backspace and delete
+        if ( event.keyCode == 46 || event.keyCode == 8 ) {
+            // let it happen, don't do anything
+        }
+        else {
+            // Ensure that it is a number and stop the keypress
+            if ($.inArray(event.keyCode, allowedInputCharacterKeyCodes) == -1) {
+				event.preventDefault();
+            } 
+        }
+    });
+
+	
+
+
+	populateFPO();
+	//remove();
+
+	$('#calculateBTN').bind('click', function(e) {
 		calculate();
 	});
 
-	$('#symbol').bind('change', function(e){
+	$('#symbol').bind('change', function(e) {
 		$(".currency").html(
 				$(e.currentTarget).val()
 				);

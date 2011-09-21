@@ -433,6 +433,7 @@ td { vertical-align: top; }
 	width:180px;
 	left:170px;
 	top:@row1Top;
+	text-align:left;
 }
 
 #dl1{
@@ -568,7 +569,7 @@ td { vertical-align: top; }
 	top:@row3Top;
 	width:@revenueInputWidth;
 	height:@revenueInputHeightLarge;
-
+	font-size:20px;
 }
 
 #F{
@@ -578,6 +579,7 @@ td { vertical-align: top; }
 	top:@row3Top;
 	width:@revenueInputWidth;
 	height:@revenueInputHeightLarge;
+	font-size:20px;
 }
 
 #L_ota_rooms{
@@ -890,6 +892,7 @@ td { vertical-align: top; }
 	top:@row8Top;
 	width:@revenueInputWidth - 20;
 	height:@revenueInputHeightLarge;
+	font-size:20px;
 
 }
 
@@ -1323,14 +1326,14 @@ font-family:serif;
 #blueContent{
 	position:absolute;
 	height:	@maskerHeight;
-	bottom:0px; //Animate this to bring blue initially on
+	bottom:-432px; //Animate this to bring blue initially on
 }
 
 #orangeContent{
  
 	position:absolute;
 	height:	@maskerHeight;
-	bottom:-150px; //Animate this to bring blue initially on
+	bottom:-432px; //Animate this to bring blue initially on
 		
 }
 
@@ -1340,7 +1343,7 @@ font-family:serif;
 	background-color:#0C5F23;
 	z-index:2;
 	position:absolute;
-	bottom:-50px;
+	bottom:-432px;
 	opacity:1;
 	left:@blueBlgLeftOffset + 14;
 }
@@ -1351,7 +1354,7 @@ font-family:serif;
 	background-color:#7EBF30;
 	z-index:3;
 	position:absolute;
-	bottom:-70px;
+	bottom:-432px;
 	left:@blueBlgLeftOffset + 14;
 	opacity:1;
 	border-top:solid;
@@ -1365,7 +1368,7 @@ font-family:serif;
 	background-color:#0D6866;
 	z-index:4;
 	position:absolute;
-	bottom:-100px;
+	bottom:-432px;
 	left:@blueBlgLeftOffset + 14;
 	opacity:1;
 	border-top:solid;
@@ -1444,6 +1447,7 @@ font-family:serif;
 	bottom:10px;
 	background-color:#D7491D;
 	padding:5px;
+	opacity:0;
 }
 
 #T_ota_total_cont{
@@ -1514,15 +1518,15 @@ font-family:serif;
 	background-image:url("../img/heart.png");
 	height:116px;
 	width:11px;
-	opacity:1;
+	opacity:0;
 }
 
 #subText{
 	position:absolute;
 	top:600px;
 	text-align:left;
-	left:430px;
-	font-weight:bold;
+	left:130px;
+	font-weight:normal;
 	color:@highlightColor;
 	font-size:15px;
 	width:500px;
@@ -1558,6 +1562,9 @@ font-family:serif;
 	z-index:999;
 }
 
+#clouds{
+	opacity:0;
+}
 
 
 //End visualization styles
