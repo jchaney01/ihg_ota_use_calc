@@ -91,13 +91,9 @@ function init(vo) {
 			bottom:'0'
 		}, 1000);
 
-		$('#heart').stop().delay(2000).animate({
-			opacity:'1'
-		}, 600);
+		$('#heart').stop().delay(2000).fadeIn(600);
 
-		$('#clouds').stop().delay(2000).animate({
-			opacity:'1'
-		}, 600);
+		$('#clouds').stop().delay(2000).fadeIn('slow');
 
 		$('#subText').stop().delay(2000).animate({
 			"opacity":1,
@@ -122,9 +118,7 @@ function init(vo) {
 			bottom:"-" + getHeightFromPercent(vo.percentOpaque, "Opaque only percentage bar") + "px"
 		}, 500);
 
-		$('#roomsNeededCont').stop().delay(1800).animate({
-			opacity:'1'
-		}, 800);
+		$('#roomsNeededCont').stop().delay(1800).fadeIn(800);
 
 		var from = {properity:0};
 		var to = {properity:vo.OTAProfitAmount};
@@ -186,9 +180,7 @@ function remove() {
 		bottom:'-432px'
 	}, 1500);
 
-	$('#roomsNeededCont, #heart, #clouds').stop().animate({
-		opacity:0
-	}, 1500);
+	$('#roomsNeededCont, #heart, #clouds').stop().fadeOut(1500);
 
 
 	$('#A').val("");
@@ -375,7 +367,53 @@ function populateFPO() {
  };*/
 
 
+//
+//  Adapted from code found at http://jquery.malsup.com/fadetest.html.
+//
+//  This is only needed for IE 7 and earlier, so this is best added to your page using IE's conditional comments
+//  (http://msdn.microsoft.com/en-us/library/ms537512%28VS.85%29.aspx) as follows:
+//      <!--[if lt IE 8]><script type="text/javascript" src="jquery-ie-fade-fix.js"></script><![endif]-->
+//
+(function($) {
+    $.fn.fadeIn = function(speed, callback) {
+        return this.animate({opacity: 'show'}, speed, function() {
+                if ( $.browser.msie )
+                {
+                        this.style.removeAttribute('filter');
+                }
+                if ( $.isFunction(callback) )
+                {
+                        callback.call(this);
+                }
+        });
+    };
 
+    $.fn.fadeOut = function(speed, callback) {
+        return this.animate({opacity: 'hide'}, speed, function() {
+                if ( $.browser.msie )
+                {
+                        this.style.removeAttribute('filter');
+                }
+                if ( $.isFunction(callback) )
+                {
+                        callback.call(this);
+                }
+        });
+    };
+
+    $.fn.fadeTo = function(speed, to, callback) {
+        return this.animate({opacity: to}, speed, function() {
+                if ( to == 1 && $.browser.msie )
+                {
+                        this.style.removeAttribute('filter');
+                }
+                if ( $.isFunction(callback) )
+                {
+                        callback.call(this);
+                }
+        });
+    };
+})(jQuery);
 
 
 var allowedInputCharacterKeyCodes = Array(48,49,50,51,52,53,54,55,56,57,96,97,98,99,100,101,102,103,104,105,100,186,222,188,190);
