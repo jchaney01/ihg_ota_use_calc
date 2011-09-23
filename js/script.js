@@ -93,12 +93,9 @@ function init(vo) {
 
 		$('#heart').stop().delay(2000).fadeIn(600);
 
-		$('#clouds').stop().delay(2000).fadeIn('slow');
+		$('#T_ota_total_cont, #T_ota_inc_rm_cont, #otaRoomContPercentage, #otaIncreRoomContPercent').stop().delay(2000).fadeIn('slow');
 
-		$('#subText').stop().delay(2000).animate({
-			"opacity":1,
-			"left":"130px"
-		}, 1000);
+		$('#subText').stop().delay(2000).fadeIn(1000);
 
 		$('#orangeContent').stop().delay(1500).animate({
 			bottom:"-" + getHeightFromPercent(vo.rightBldgPercent, "Orange section") + "px"
@@ -180,7 +177,7 @@ function remove() {
 		bottom:'-432px'
 	}, 1500);
 
-	$('#roomsNeededCont, #heart, #clouds').stop().fadeOut(1500);
+	$('#roomsNeededCont, #heart, #T_ota_total_cont, #T_ota_inc_rm_cont, #otaRoomContPercentage, #otaIncreRoomContPercent').stop().fadeOut(1500);
 
 
 	$('#A').val("");
