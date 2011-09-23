@@ -189,4 +189,4 @@ td{vertical-align:top;}
 #miniBuildings{height:432px;width:100px;background-image:url("../img/minis.png");position:absolute;top:71px;left:381px;}
 #l_forground{position:absolute;bottom:0;left:60px;width:187px;height:60px;background:url("../img/l_forground.png");z-index:999;}
 #r_forground{position:absolute;bottom:0;left:280px;width:102px;height:44px;background:url("../img/r_forground.png");z-index:999;}
-#clouds{filter:inherit;display:none;}
+#clouds{filter:inherit;opacity:0;display:none;}
