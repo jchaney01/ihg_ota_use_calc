@@ -68,6 +68,14 @@ function init(vo) {
 	$('#otaIncreRoomContPercent').html(vo.otaIncreRoomContPercent + '<span class="percent">%</span>');
 	$('#otaRoomContPercentage').html(vo.otaRoomContPercentage + '<span class="percent">%</span>');
 
+	//Rid thy self of items if negative profit
+
+	if (vo.yourProfit < 0 || isNaN(vo.roomsNeeded)) {
+		$("#rightBuildingBase, #miniBuildings, #r_forground, #roomsNeededCont, #heart").fadeOut();
+	} else {
+		$("#rightBuildingBase, #miniBuildings, #r_forground").fadeIn();
+	}
+
 	if (validateData(vo)) {
 
 //		$("#yourProfitAmount").html(convertNumberFormat(vo.yourProfit, vo.language, $('#language').val()));
@@ -91,11 +99,13 @@ function init(vo) {
 			bottom:'0'
 		}, 1000);
 
-		$('#heart').stop().delay(2000).fadeIn(600);
-
+		if (vo.yourProfit >= 0 && !isNaN(vo.roomsNeeded)) {
+			$('#heart').stop().delay(2000).fadeIn(600);
+		}
 		$('#T_ota_total_cont, #T_ota_inc_rm_cont, #otaRoomContPercentage, #otaIncreRoomContPercent').stop().delay(2000).fadeIn('slow');
 
 		$('#subText').stop().delay(2000).fadeIn(1000);
+
 
 		$('#orangeContent').stop().delay(1500).animate({
 			bottom:"-" + getHeightFromPercent(vo.rightBldgPercent, "Orange section") + "px"
@@ -114,9 +124,9 @@ function init(vo) {
 		$('#f_opaque').stop().delay(1200).animate({
 			bottom:"-" + getHeightFromPercent(vo.percentOpaque, "Opaque only percentage bar") + "px"
 		}, 500);
-
-		$('#roomsNeededCont').stop().delay(1800).fadeIn(800);
-
+		if (vo.yourProfit >= 0 && !isNaN(vo.roomsNeeded)) {
+			$('#roomsNeededCont').stop().delay(1800).fadeIn(800);
+		}
 		var from = {properity:0};
 		var to = {properity:vo.OTAProfitAmount};
 
@@ -159,7 +169,7 @@ function getHeightFromPercent(percent, logNote) {
 	//Trap if more than 100% was passed.  If so, someone messed up!
 	if (result < 0) {
 		log("Critical Application Error: " + logNote + " percentage passed to visualization exceeds 100%.  Capping value for display but this is a programatic issue.");
-		result = 0;
+		result = 432;
 	}
 	if (result > 319) { //this number is the threshold for what is too small to show, decrease from height of mask
 		log("Notice: " + logNote + " height too small to show.  Will animate to min allowed for display. Pixel count is only " + pixels);
@@ -211,7 +221,6 @@ function remove() {
 	$('#b_').html("");
 	$('#X').html("");
 	$('#Y').html("");
-	
 
 
 	//Add code to clear fields
@@ -283,8 +292,8 @@ function calculate() {
 		yourProfit: truncateUniversalNum(X - Y, 2),
 		rightBldgPercent: ((X - Y) * 100) / ((Z * 0.01) * T),
 		roomsNeeded: truncateUniversalNum((X - Y) / (D - F), 0),
-		otaRoomContPercentage: truncateUniversalNum(S / (E*0.01), 2),
-		otaIncreRoomContPercent: truncateUniversalNum(b_ / (E*0.01), 2)
+		otaRoomContPercentage: truncateUniversalNum(S / (E * 0.01), 2),
+		otaIncreRoomContPercent: truncateUniversalNum(b_ / (E * 0.01), 2)
 	}
 
 
@@ -372,67 +381,59 @@ function populateFPO() {
 //      <!--[if lt IE 8]><script type="text/javascript" src="jquery-ie-fade-fix.js"></script><![endif]-->
 //
 (function($) {
-    $.fn.fadeIn = function(speed, callback) {
-        return this.animate({opacity: 'show'}, speed, function() {
-                if ( $.browser.msie )
-                {
-                        this.style.removeAttribute('filter');
-                }
-                if ( $.isFunction(callback) )
-                {
-                        callback.call(this);
-                }
-        });
-    };
+	$.fn.fadeIn = function(speed, callback) {
+		return this.animate({opacity: 'show'}, speed, function() {
+			if ($.browser.msie) {
+				this.style.removeAttribute('filter');
+			}
+			if ($.isFunction(callback)) {
+				callback.call(this);
+			}
+		});
+	};
 
-    $.fn.fadeOut = function(speed, callback) {
-        return this.animate({opacity: 'hide'}, speed, function() {
-                if ( $.browser.msie )
-                {
-                        this.style.removeAttribute('filter');
-                }
-                if ( $.isFunction(callback) )
-                {
-                        callback.call(this);
-                }
-        });
-    };
+	$.fn.fadeOut = function(speed, callback) {
+		return this.animate({opacity: 'hide'}, speed, function() {
+			if ($.browser.msie) {
+				this.style.removeAttribute('filter');
+			}
+			if ($.isFunction(callback)) {
+				callback.call(this);
+			}
+		});
+	};
 
-    $.fn.fadeTo = function(speed, to, callback) {
-        return this.animate({opacity: to}, speed, function() {
-                if ( to == 1 && $.browser.msie )
-                {
-                        this.style.removeAttribute('filter');
-                }
-                if ( $.isFunction(callback) )
-                {
-                        callback.call(this);
-                }
-        });
-    };
+	$.fn.fadeTo = function(speed, to, callback) {
+		return this.animate({opacity: to}, speed, function() {
+			if (to == 1 && $.browser.msie) {
+				this.style.removeAttribute('filter');
+			}
+			if ($.isFunction(callback)) {
+				callback.call(this);
+			}
+		});
+	};
 })(jQuery);
 
 
-var allowedInputCharacterKeyCodes = Array(48,49,50,51,52,53,54,55,56,57,96,97,98,99,100,101,102,103,104,105,100,186,222,188,190);
+var allowedInputCharacterKeyCodes = Array(48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 100, 186, 222, 188, 190);
 
 $(document).ready(function() {
 
 	//Limits the types of characters to be accepted.
 
 	$("input[id != hotelName]").keydown(function(event) {
-        // Allow only backspace and delete
-        if ( event.keyCode == 46 || event.keyCode == 8 ) {
-            // let it happen, don't do anything
-        }
-        else {
-            // Ensure that it is a number and stop the keypress
-            if ($.inArray(event.keyCode, allowedInputCharacterKeyCodes) == -1) {
+		// Allow only backspace and delete
+		if (event.keyCode == 46 || event.keyCode == 8) {
+			// let it happen, don't do anything
+		}
+		else {
+			// Ensure that it is a number and stop the keypress
+			if ($.inArray(event.keyCode, allowedInputCharacterKeyCodes) == -1) {
 				event.preventDefault();
-            } 
-        }
-    });
-
-	
+			}
+		}
+	});
 
 
 	populateFPO();
