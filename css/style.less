@@ -355,7 +355,7 @@ bdo{
 	width:490px;
 	position:relative;
 	top:50px;
-	left:50px;
+	left:0px;
 	z-index:2;
 }
 
@@ -1249,7 +1249,7 @@ background: linear-gradient(top, #adadad 0%,#494949 100%); /* W3C */
 @rotatedTopOffest:4px;
 @yourProfitAmountContWidth:@otaprofitCont;
 @buildingLabelPaddingAmount:4px;
-@buildingDollarFontSize:22px;
+@buildingDollarFontSize:21px;
 @roomsNeededContWidth:110px;
 
 #devPusher{
@@ -1258,7 +1258,7 @@ background: linear-gradient(top, #adadad 0%,#494949 100%); /* W3C */
 
 #visualization{
     position:absolute;
-    right:-150px;
+    right:-100px;
     width:750px;
     height:700px;
     top:0px;
@@ -1418,8 +1418,8 @@ background: linear-gradient(top, #adadad 0%,#494949 100%); /* W3C */
 	width:@yourProfitAmountContWidth;
 	top:20px;
 	position:absolute;
-	left:@orangeBlgLeftOffset+@orangeBuildingWidth;
-	z-index:999;
+	left:(@orangeBlgLeftOffset + @orangeBuildingWidth) - 20;
+
 }
 
 #yourProfitLabel{
@@ -1439,7 +1439,7 @@ background: linear-gradient(top, #adadad 0%,#494949 100%); /* W3C */
 }
 #yourProfitAmountDollarCont{
 	text-align:left;
-	padding-left:5px;
+	padding-left:22px;
 	color:#16ACA5;
 	font-size:@buildingDollarFontSize;
 	font-family: 'Times New Roman', Times, serif;
@@ -1457,7 +1457,7 @@ background: linear-gradient(top, #adadad 0%,#494949 100%); /* W3C */
 
 #T_ota_total_cont{
 	text-transform:uppercase;
-	color:white;
+	color:#032728;
 	font-weight:bold;
 	position:absolute;
 	top:150px;
@@ -1482,7 +1482,7 @@ background: linear-gradient(top, #adadad 0%,#494949 100%); /* W3C */
 
 #otaRoomContPercentage{
 	text-transform:uppercase;
-	color:white;
+	color:#032728;
 	font-weight:normal;
 	position:absolute;
 	top:170px;

@@ -60,7 +60,7 @@ td{vertical-align:top;}
 .clearfix{zoom:1;}
 @media only screen and (min-width: 480px){}@media only screen and (min-width: 768px){}@media print{*{background:transparent !important;color:black !important;text-shadow:none !important;filter:none !important;-ms-filter:none !important;} a,a:visited{text-decoration:underline;} a[href]:after{content:" (" attr(href) ")";} abbr[title]:after{content:" (" attr(title) ")";} .ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:"";} pre,blockquote{border:1px solid #999;page-break-inside:avoid;} thead{display:table-header-group;} tr,img{page-break-inside:avoid;} img{max-width:100% !important;} @page {margin:0.5cm;}p,h2,h3{orphans:3;widows:3;} h2,h3{page-break-after:avoid;}}bdo{margin-top:0px;padding-top:0px;}
 #masterContainer{width:1000px;height:800px;margin:0 auto;position:relative;}
-#formCont{width:490px;position:relative;top:50px;left:50px;z-index:2;}
+#formCont{width:490px;position:relative;top:50px;left:0px;z-index:2;}
 ._GeneralPositioning{position:absolute;margin:0;padding:0;z-index:999;}
 ._GeneralInputStyles{text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;}
 ._GeneralResultStyles{background-color:transparent;border-right:solid;border-left:solid;border-bottom:solid;border-width:2px;text-align:right;color:#999999;padding:2px;border-color:#999999;}
@@ -158,13 +158,13 @@ td{vertical-align:top;}
 #clearBTN:hover{text-decoration:none;}
 #shader1{position:absolute;margin:0;padding:0;z-index:999;width:109px;height:210px;background-color:#E1E2E3;z-index:0;top:420px;}
 #devPusher{margin-bottom:800px;}
-#visualization{position:absolute;right:-150px;width:750px;height:700px;top:0px;background-image:url("../img/v_bkg.png");}
+#visualization{position:absolute;right:-100px;width:750px;height:700px;top:0px;background-image:url("../img/v_bkg.png");}
 #buildingMasker{height:432px;width:610px;position:absolute;bottom:131px;left:150px;overflow:hidden;border-bottom-style:solid;border-bottom-width:0px;border-bottom-color:black;}
 #leftBuildingBase{height:432px;background-image:url("../img/l_bldg.png");width:100px;position:absolute;bottom:0px;left:115px;z-index:1;}
 #rightBuildingBase{height:432px;background-image:url("../img/r_bldg.png");width:100px;position:absolute;bottom:0;left:281px;z-index:20;}
 #otaProfitAmountCont{position:absolute;left:0;top:5px;width:163px;}
 #otaProfitLabel{width:100%;height:26px;background-image:url("../img/l_banner.png");padding-left:20px;padding-top:6px;color:white;font-weight:bold;background-repeat:no-repeat;}
-#otaProfitAmount{text-align:right;padding-right:54px;font-size:22px;color:#0C5F23;font-family:'Times New Roman',Times,serif;}
+#otaProfitAmount{text-align:right;padding-right:54px;font-size:21px;color:#0C5F23;font-family:'Times New Roman',Times,serif;}
 .percent{font-size:.70em ;vertical-align:super;}
 #blueContent{position:absolute;height:432px;bottom:-432px;}
 #orangeContent{position:absolute;height:432px;bottom:-432px;}
@@ -174,14 +174,14 @@ td{vertical-align:top;}
 #roomsOnlyCopy{-webkit-transform:rotate(0deg);position:absolute;top:4px;left:4px;width:80px;color:white;font-size:13px;text-align:left;}
 #packageCopy{-webkit-transform:rotate(0deg);position:absolute;top:4px;left:4px;width:80px;color:white;font-size:13px;text-align:left;}
 #opaqueCopy{-webkit-transform:rotate(0deg);position:absolute;top:4px;left:4px;width:80px;color:white;font-size:13px;text-align:left;}
-#yourProfitAmountCont{width:163px;top:20px;position:absolute;left:381px;z-index:999;}
+#yourProfitAmountCont{width:163px;top:20px;position:absolute;left:361px;}
 #yourProfitLabel{background:url("../img/r_banner.png");width:100%;width:130px;height:26px;}
 #yourProfitLabelText{text-align:right;padding-top:5px;padding-right:17px;color:white;font-weight:bold;font-family:'Times New Roman',Times,serif;}
-#yourProfitAmountDollarCont{text-align:left;padding-left:5px;color:#16ACA5;font-size:22px;font-family:'Times New Roman',Times,serif;}
+#yourProfitAmountDollarCont{text-align:left;padding-left:22px;color:#16ACA5;font-size:21px;font-family:'Times New Roman',Times,serif;}
 #roomsNeededCont{width:110px;position:absolute;left:500px;bottom:10px;background-color:#D7491D;padding:5px;display:none;}
-#T_ota_total_cont{text-transform:uppercase;color:white;font-weight:bold;position:absolute;top:150px;left:380px;font-size:12px;width:160px;}
+#T_ota_total_cont{text-transform:uppercase;color:#032728;font-weight:bold;position:absolute;top:150px;left:380px;font-size:12px;width:160px;}
 #T_ota_inc_rm_cont{text-transform:uppercase;color:#032728;font-weight:bold;position:absolute;top:80px;left:510px;font-size:12px;width:145px;}
-#otaRoomContPercentage{text-transform:uppercase;color:white;font-weight:normal;position:absolute;top:170px;left:380px;font-size:49px;width:160px;font-family:'Times New Roman',Times,serif;}
+#otaRoomContPercentage{text-transform:uppercase;color:#032728;font-weight:normal;position:absolute;top:170px;left:380px;font-size:49px;width:160px;font-family:'Times New Roman',Times,serif;}
 #otaIncreRoomContPercent{text-transform:uppercase;color:#032728;font-weight:normal;position:absolute;top:20px;left:510px;font-size:49px;width:160px;font-family:'Times New Roman',Times,serif;}
 #roomsNeededCopy{width:57px;font-size:9px;text-transform:uppercase;color:white;}
 #roomsNeededResult{font-size:40px;}
