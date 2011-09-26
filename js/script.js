@@ -274,8 +274,8 @@ function calculate() {
 		copy: {
 			V_L_ota_profit		: "OTA PROFIT",
 			V_T_concerns		: "CONCERNS",
-			V_T_p1a				: "THINK ABOUT WHOSE BUSINESS YOU'RE BUILDING...",
-			V_T_p1b				: "How can you rebalance your business reliance on OTAs and improve your profitability?",
+			V_T_p1a				: "YOU CONTROL THE FUTURE OF YOUR BUSINESS",
+			V_T_p1b				: "Think about how you can ensure you have the right balance of OTAs in your business and improve profitability by selling the majority of them through our direct branded channels.",
 			T_ota_total_cont	: "OTA TOTAL ROOM CONTRIBUTION",
 			T_ota_inc_rm_cont	: "OTA INCREMENTAL ROOM CONTRIBUTION",
 			L_your_profit		: "YOUR PROFIT",
