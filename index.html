@@ -45,16 +45,14 @@
 		<div id="masterContainer">
 			<div id="formCont">
 				<div id="mainTitle">Calculate Your OTA Dependency</div>
-				<div id="mainParagraph">Online travel agencies are a part of our business; however, selling rooms
-					through them over our direct booking channels is less profitable. It's therefore important to strike
-					the right balance when selling rooms, and this tool helps show you how to do this.
+				<div id="mainParagraph">The purpose of this calculator is to generate thought around balancing your business.  Are you over-reliant on OTAs?  Get a better idea by using this tool.
 				</div>
 				<form id="calcForm">
 					<select id="language">
 						<option value="English">English</option>
 					</select>
 					<select id="symbol">
-						<option value="$">$</option>
+						<option value="$">USD</option>
 						<option value="&euro;">&euro;</option>
 						<option value="&pound;">&pound;</option>
 						<option value="&yen;">&yen;</option>
@@ -63,22 +61,22 @@
 					<!--User data-->
 
 					<input id="hotelName" type="text"/>
-					<input id="A"/>
-					<input id="B"/>
-					<input id="C"/>
-					<input id="D"/>
-					<input id="E"/>
-					<input id="F"/>
-					<input id="G"/>
-					<input id="H"/>
-					<input id="J"/>
-					<input id="K"/>
-					<input id="L"/>
-					<input id="M"/>
-					<input id="N"/>
-					<input id="P"/>
-					<input id="Q"/>
-					<input id="R"/>
+					<input id="A" tabindex="1" class="single"/>
+					<input id="B" tabindex="2" class="double"/>
+					<input id="C" tabindex="3" class="double"/>
+					<input id="D" tabindex="4" class="double"/>
+					<input id="E" tabindex="5" class="double"/>
+					<input id="F" tabindex="6" class="double"/>
+					<input id="G" tabindex="7" class="single"/>
+					<input id="H" tabindex="8" class="single"/>
+					<input id="J" tabindex="9" class="single"/>
+					<input id="K" tabindex="10" class="single"/>
+					<input id="L" tabindex="11" class="single"/>
+					<input id="M" tabindex="12" class="single"/>
+					<input id="N" tabindex="13" class="single"/>
+					<input id="P" tabindex="14" class="single"/>
+					<input id="Q" tabindex="15" class="single"/>
+					<input id="R" tabindex="16" class="double"/>
 
 					<!--Calculated data-->
 
@@ -224,12 +222,6 @@
 	<footer>
 	</footer>
 </div>
-<!--! end of #container -->
-
-
-<!-- JavaScript at the bottom for fast page loading -->
-
-<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
 <script src="js/libs/jshashtable-2.1.js"></script>
@@ -237,6 +229,8 @@
 
 
 <!-- scripts concatenated and minified via ant build script-->
+<script src="js/libs/metadata.js" type="text/javascript"></script>
+<SCRIPT src="js/libs/autoNumeric.js" type=text/javascript></SCRIPT>
 <script defer src="js/underscore-min.js"></script>
 <script defer src="js/plugins.js"></script>
 <script defer src="js/script.js"></script>
