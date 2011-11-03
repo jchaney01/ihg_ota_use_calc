@@ -274,8 +274,8 @@ function calculate() {
 		copy: {
 			V_L_ota_profit		: "OTA PROFIT",
 			V_T_concerns		: "CONCERNS",
-			V_T_p1a				: "THINK ABOUT WHOSE BUSINESS YOU'RE BUILDING...",
-			V_T_p1b				: "How can you rebalance your business reliance on OTAs and improve your profitability?",
+			V_T_p1a				: "YOU CONTROL THE FUTURE OF YOUR BUSINESS",
+			V_T_p1b				: "Think about how you can ensure you have the right balance of OTAs in your business and improve profitability by selling the majority of them through our direct branded channels.",
 			T_ota_total_cont	: "OTA TOTAL ROOM CONTRIBUTION",
 			T_ota_inc_rm_cont	: "OTA INCREMENTAL ROOM CONTRIBUTION",
 			L_your_profit		: "YOUR PROFIT",
@@ -416,13 +416,13 @@ function populateFPO() {
 })(jQuery);
 
 
-var allowedInputCharacterKeyCodes = Array(48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 100, 186, 222, 188, 190);
+//var allowedInputCharacterKeyCodes = Array(48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 100, 186, 222, 188, 190);
 
 $(document).ready(function() {
 
 	//Limits the types of characters to be accepted.
 
-	$("input[id != hotelName]").keydown(function(event) {
+	/*$("input[id != hotelName]").keydown(function(event) {
 		// Allow only backspace and delete
 		if (event.keyCode == 46 || event.keyCode == 8) {
 			// let it happen, don't do anything
@@ -433,8 +433,12 @@ $(document).ready(function() {
 				event.preventDefault();
 			}
 		}
-	});
+	});*/
 
+
+	$(".double").autoNumeric();
+	$(".single").autoNumeric({vMin: '0',vMax:'999999'});
+	
 
 	populateFPO();
 	//remove();

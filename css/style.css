@@ -67,10 +67,10 @@ td{vertical-align:top;}
 ._GeneralLabelStyles{font-weight:bold;text-transform:uppercase;color:black;}
 ._GeneralSymbolStyles{color:#999999;}
 #mainTitle{font-size:28px;color:#d64024;}
-#mainParagraph{font-size:13px;}
+#mainParagraph{margin-top:10px;font-size:13px;}
 #calcForm{margin-top:10px;}
 #language{position:absolute;margin:0;padding:0;z-index:999;width:100px;top:110px;}
-#symbol{position:absolute;margin:0;padding:0;z-index:999;width:40px;left:110px;top:110px;}
+#symbol{position:absolute;margin:0;padding:0;z-index:999;width:55px;left:107px;top:110px;}
 #hotelName{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;width:180px;left:170px;top:110px;text-align:left;}
 #dl1{position:absolute;margin:0;padding:0;z-index:999;top:215px;height:2px;width:455px;background-color:black;}
 #A{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;width:70px;left:370px;top:110px;}
