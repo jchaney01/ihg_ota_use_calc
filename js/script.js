@@ -2,7 +2,7 @@ window.log = function() {
 	log.history = log.history || [];   // store logs to an array for reference
 	log.history.push(arguments);
 	arguments.callee = arguments.callee.caller;
-	if (this.console) console.log(Array.prototype.slice.call(arguments));
+	//if (this.console) console.log(Array.prototype.slice.call(arguments));
 };
 // make it safe to use console.log always
 (function(b) {
@@ -220,17 +220,10 @@ function remove() {
 	$('#b_').html("");
 	$('#X').html("");
 	$('#Y').html("");
-
-
-	//Add code to clear fields
-
 }
 
 function calculate() {
 
-	//Note var namnes match /comps/formulas.png
-
-	//First, convert everythign to universal for math operations
 	var A = convertNumberFormat($('#A').val(), $("#language").val(), "Universal");
 	var B = convertNumberFormat($('#B').val(), $("#language").val(), "Universal");
 	var C = convertNumberFormat($('#C').val(), $("#language").val(), "Universal");
@@ -248,7 +241,6 @@ function calculate() {
 	var Q = convertNumberFormat($('#Q').val(), $("#language").val(), "Universal");
 	var R = convertNumberFormat($('#R').val(), $("#language").val(), "Universal");
 
-	//Next, generate the calculated values
 	var CE = C / E;
 	var HG = H / G;
 	var LK = L / K;
@@ -263,7 +255,6 @@ function calculate() {
 	var b_ = (Number(G) + Number(K) + Number(N)) * (R * 0.01);
 	var X = (R * 0.01) * T;
 	var Y = F * S;
-
 
 	//Calculate the value object the visualization needs here. Copy still needs to be pulled from global JSON (which is created from the Excel language matrix)
 	//Also need to truncate these to two decimal points.
@@ -296,7 +287,7 @@ function calculate() {
 	};
 
 
-	//Finally, populate the fields with the correct formatting and launch visualizationz
+	//Populate the fields with the correct formatting and launch visualization
 
 	$('#CE').html(convertNumberFormat(CE, "English", $("#language").val()));
 	$('#HG').html(convertNumberFormat(HG, "English", $("#language").val()));
@@ -450,7 +441,7 @@ $(document).ready(function() {
 		$(".currency").html(
 				$(e.currentTarget).val()
 				);
-	})
+	});
 
 	$('#animateIn').bind('click', function() {
 		populateFPO();
