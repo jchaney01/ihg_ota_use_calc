@@ -70,16 +70,16 @@ td{vertical-align:top;}
 #mainParagraph{margin-top:10px;font-size:13px;}
 #calcForm{margin-top:10px;}
 #language{position:absolute;margin:0;padding:0;z-index:999;width:100px;top:90px;}
-#symbol{position:absolute;margin:0;padding:0;z-index:999;width:55px;left:107px;top:90px;}
-#hotelName{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;width:180px;left:170px;top:90px;text-align:left;}
+#symbol{position:absolute;margin:0;padding:0;z-index:999;width:65px;left:107px;top:90px;}
+#hotelName{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;width:180px;left:180px;top:90px;text-align:left;}
 #dl1{position:absolute;margin:0;padding:0;z-index:999;top:195px;height:2px;width:455px;background-color:black;}
-#A{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;width:70px;left:370px;top:90px;}
+#A{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;width:70px;left:380px;top:90px;}
 #B{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;width:50px;left:0;top:140px;height:17px;}
 #C{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;width:120px;left:85px;top:140px;height:17px;}
 #D{position:absolute;margin:0;padding:0;z-index:999;text-align:right;padding:2px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow:4px 4px 8px #C9C9C9;-webkit-box-shadow:4px 4px 8px #C9C9C9;box-shadow:4px 4px 8px #C9C9C9;border-color:#6F6F6F;border-width:1px;width:120px;left:220px;top:140px;height:17px;}
 #CE{position:absolute;margin:0;padding:0;z-index:999;background-color:transparent;border-right:solid;border-left:solid;border-bottom:solid;border-width:2px;text-align:right;color:#999999;padding:2px;border-color:#999999;width:90px;left:354px;top:140px;height:19px;}
-#L_A{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:70px;left:373px;top:119px;font-size:10px;}
-#L_hotelName{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:100px;left:170px;top:119px;font-size:10px;}
+#L_A{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:70px;left:383px;top:119px;font-size:10px;}
+#L_hotelName{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:100px;left:180px;top:119px;font-size:10px;}
 #L_B{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:70px;left:0;top:169px;font-size:10px;}
 #L_C{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:70px;left:85px;top:169px;font-size:10px;}
 #L_D{position:absolute;margin:0;padding:0;z-index:999;font-weight:bold;text-transform:uppercase;color:black;width:100px;left:220px;top:169px;font-size:10px;}
