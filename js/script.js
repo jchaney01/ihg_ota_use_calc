@@ -294,7 +294,7 @@ function calculate() {
 		roomsNeeded: truncateUniversalNum((X - Y) / (D - F), 0),
 		otaRoomContPercentage: truncateUniversalNum(S / (E * 0.01), 2),
 		otaIncreRoomContPercent: truncateUniversalNum(b_ / (E * 0.01), 2)
-	}
+	};
 
 
 	//Finally, populate the fields with the correct formatting and launch visualizationz
