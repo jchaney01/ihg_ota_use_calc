@@ -104,7 +104,7 @@ function init(vo) {
 		}
 		$('#T_ota_total_cont, #T_ota_inc_rm_cont, #otaRoomContPercentage, #otaIncreRoomContPercent').stop().delay(2000).fadeIn('slow');
 
-		$('#subText').stop().delay(2000).fadeIn(1000);
+		$('#subText, #subText2').stop().delay(2000).fadeIn(1000);
 
 
 		$('#orangeContent').stop().delay(1500).animate({
@@ -190,7 +190,6 @@ function remove() {
 	$('#roomsNeededCont, #heart, #T_ota_total_cont, #T_ota_inc_rm_cont, #otaRoomContPercentage, #otaIncreRoomContPercent').stop().fadeOut(1500);
 
 
-	$('#A').val("");
 	$('#B').val("");
 	$('#C').val("");
 	$('#D').val("");
